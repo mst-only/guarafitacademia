@@ -9,7 +9,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none; /* Remove sublinhado de todos os links */
+}
+
+/* REMOVE O AZUL DE TODOS OS LINKS DO SITE */
+a, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: inherit;
 }
 
 body {
@@ -62,26 +67,27 @@ header {
     color: #e0e0e0;
 }
 
-/* Estilização do Botão MATRICULE-SE */
+/* ESTILO DO BOTÃO (FORÇANDO CORES) */
 .area-botoes {
     margin-top: 20px;
 }
 
 .btn-whatsapp {
-    display: inline-block;
-    background-color: var(--laranja);
-    color: var(--branco);
-    padding: 12px 20px;
-    border-radius: 6px;
-    font-weight: 700;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    transition: 0.3s ease;
-    text-align: center;
+    display: inline-block !important;
+    background-color: var(--laranja) !important;
+    color: white !important; /* Força o texto a ser branco */
+    padding: 12px 20px !important;
+    border-radius: 6px !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    text-transform: uppercase !important;
+    transition: 0.3s ease !important;
+    text-align: center !important;
+    border: none !important;
 }
 
 .btn-whatsapp:hover {
-    background-color: #e65c00;
+    background-color: #e65c00 !important;
     transform: scale(1.05);
 }
 
@@ -90,11 +96,4 @@ footer {
     padding: 40px 20px;
     color: #444;
     font-size: 0.8rem;
-    border-top: 1px solid #111;
-}
-
-/* Ajuste para telas muito pequenas */
-@media (max-width: 400px) {
-    .logo h1 { font-size: 2rem; }
-    .unidade h2 { font-size: 1.4rem; }
 }
