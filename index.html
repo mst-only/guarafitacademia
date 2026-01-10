@@ -20,13 +20,13 @@
 
         body { background-color: var(--preto); color: #ffffff; font-family: 'Poppins', sans-serif; margin: 0; }
         
-        header { background-color: var(--preto); padding: 30px 10px; text-align: center; }
-        .logo h1 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 2.5rem; margin: 0; letter-spacing: 4px; }
+        header { background-color: var(--preto); padding: 25px 10px; text-align: center; }
+        .logo h1 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 2.2rem; margin: 0; letter-spacing: 4px; }
 
-        /* MENU COM ÍCONES DE PESOS (DUMBBELLS) */
+        /* MENU OPÇÃO 3: SCROLLSPY INTELIGENTE */
         nav {
-            background-color: rgba(0,0,0,0.95);
-            padding: 15px 0;
+            background-color: rgba(0,0,0,0.98);
+            padding: 10px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -38,56 +38,63 @@
             margin: 0 auto;
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 15px;
         }
 
         .nav-link { 
             font-family: 'Oswald', sans-serif; 
-            font-size: 0.85rem; 
+            font-size: 0.75rem; 
             text-transform: uppercase; 
-            letter-spacing: 1.5px;
-            color: #ffffff !important;
+            letter-spacing: 1px;
+            color: #555 !important; /* Cor discreta quando inativo */
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 10px;
-            transition: 0.3s;
-            opacity: 0.8;
+            gap: 5px;
+            transition: 0.4s;
+            padding: 5px 10px;
         }
 
-        .nav-link i { color: var(--laranja); font-size: 1rem; }
-        .nav-link:hover { opacity: 1; transform: translateY(-2px); color: var(--laranja) !important; }
+        .nav-link i { font-size: 1.2rem; transition: 0.3s; }
 
-        .container { padding: 40px 20px; max-width: 600px; margin: 0 auto; }
+        /* Estilo da pílula ativa via JavaScript */
+        .nav-link.active {
+            color: var(--laranja) !important;
+            transform: scale(1.1);
+        }
+
+        .nav-link.active i { transform: rotate(-15deg); }
+
+        .container { padding: 30px 20px; max-width: 600px; margin: 0 auto; }
 
         .unidade {
             background-color: var(--cinza-card);
-            margin-bottom: 60px;
+            margin-bottom: 70px;
             border-radius: 20px;
             overflow: hidden;
             border: 1px solid #222;
-            scroll-margin-top: 120px;
+            scroll-margin-top: 100px; /* Importante para o clique no menu cair certo */
         }
 
-        .unidade-foto-container { width: 100%; height: 240px; }
+        .unidade-foto-container { width: 100%; height: 220px; position: relative; }
         .unidade-foto-container img { width: 100%; height: 100%; object-fit: cover; }
         
-        .unidade-content { padding: 30px; }
-        .unidade h2 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 1.7rem; text-transform: uppercase; margin: 0 0 15px 0; }
+        .unidade-content { padding: 25px; }
+        .unidade h2 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 1.6rem; text-transform: uppercase; margin-bottom: 15px; }
         
-        .unidade-info { margin-bottom: 25px; }
-        .unidade-info p { font-size: 0.9rem; color: #bbb; margin: 8px 0; display: flex; align-items: flex-start; gap: 12px; line-height: 1.4; }
-        .unidade-info i { color: var(--laranja); margin-top: 4px; width: 16px; text-align: center; }
+        .unidade-info p { font-size: 0.85rem; color: #bbb; margin: 6px 0; display: flex; gap: 10px; }
+        .unidade-info i { color: var(--laranja); width: 15px; text-align: center; }
 
-        .area-botoes { display: flex; gap: 12px; }
-        .btn { flex: 1; padding: 16px; text-align: center; font-weight: 700; border-radius: 10px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+        .area-botoes { display: flex; gap: 10px; margin-top: 20px; }
+        .btn { flex: 1; padding: 15px; text-align: center; font-weight: 700; border-radius: 8px; font-size: 0.75rem; text-transform: uppercase; }
         .btn-matricula { background-color: var(--laranja) !important; }
         .btn-mapa { background-color: var(--cinza-botao) !important; border: 1px solid #333; }
 
         .footer-social { text-align: center; padding: 50px 20px; background-color: #080808; border-top: 1px solid #222; }
         .dropdown-footer { position: relative; display: inline-block; }
         .dropbtn-footer {
-            background: none; border: 1px solid #444; color: #aaa; padding: 12px 25px; 
-            font-size: 0.8rem; cursor: pointer; border-radius: 50px; text-transform: uppercase; font-family: 'Oswald', sans-serif;
+            background: none; border: 1px solid #444; color: #888; padding: 12px 25px; 
+            font-size: 0.8rem; cursor: pointer; border-radius: 50px; text-transform: uppercase;
         }
         .dropdown-content-footer {
             display: none; position: absolute; bottom: 55px; left: 50%; transform: translateX(-50%);
@@ -97,36 +104,37 @@
         .dropdown-content-footer a:hover { background-color: var(--laranja); }
         .dropdown-footer:hover .dropdown-content-footer { display: block; }
 
-        footer { text-align: center; padding: 30px; color: #444; font-size: 0.75rem; }
+        footer { text-align: center; padding: 30px; color: #444; font-size: 0.7rem; }
 
         @media (max-width: 480px) {
-            .nav-container { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 15px; }
-            .nav-link { font-size: 0.75rem; justify-content: center; background: #0c0c0c; padding: 15px 5px; border-radius: 8px; opacity: 1; }
+            .nav-container { gap: 5px; }
+            .nav-link { font-size: 0.6rem; padding: 5px; }
+            .nav-link i { font-size: 1rem; }
             .area-botoes { flex-direction: column; }
         }
     </style>
 </head>
-<body>
+<body data-spy="scroll" data-target=".nav-container">
 
     <header><div class="logo"><h1>GUARAFIT</h1></div></header>
 
     <nav>
         <div class="nav-container">
-            <a href="#guara-vila" class="nav-link"><i class="fas fa-dumbbell"></i> GUARÁ</a>
-            <a href="#lorena" class="nav-link"><i class="fas fa-dumbbell"></i> LORENA</a>
-            <a href="#cachoeira" class="nav-link"><i class="fas fa-dumbbell"></i> CACHOEIRA</a>
-            <a href="#cruzeiro" class="nav-link"><i class="fas fa-dumbbell"></i> CRUZEIRO</a>
+            <a href="#un-guara" class="nav-link active" id="link-guara"><i class="fas fa-dumbbell"></i> GUARÁ</a>
+            <a href="#un-lorena" class="nav-link" id="link-lorena"><i class="fas fa-dumbbell"></i> LORENA</a>
+            <a href="#un-cachoeira" class="nav-link" id="link-cachoeira"><i class="fas fa-dumbbell"></i> CACHOEIRA</a>
+            <a href="#un-cruzeiro" class="nav-link" id="link-cruzeiro"><i class="fas fa-dumbbell"></i> CRUZEIRO</a>
         </div>
     </nav>
 
     <main class="container">
-        <section id="guara-vila" class="unidade">
+        <section id="un-guara" class="unidade">
             <div class="unidade-foto-container"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800"></div>
             <div class="unidade-content">
                 <h2>Guaratinguetá - Vila Guara</h2>
                 <div class="unidade-info">
-                    <p><i class="fas fa-location-dot"></i> Av. Nossa Sra. de Fátima, 12</p>
-                    <p><i class="fas fa-calendar-days"></i> Seg a Sex: 06h às 22h | Sáb: 08h às 14h</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Nossa Sra. de Fátima, 12</p>
+                    <p><i class="fas fa-clock"></i> Seg a Sex: 06h às 22h | Sáb: 08h às 14h</p>
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
@@ -135,28 +143,13 @@
             </div>
         </section>
 
-        <section class="unidade">
-            <div class="unidade-foto-container"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800"></div>
-            <div class="unidade-content">
-                <h2>Guaratinguetá - Pedregulho</h2>
-                <div class="unidade-info">
-                    <p><i class="fas fa-location-dot"></i> Rua Alexandre Fleming, 140</p>
-                    <p><i class="fas fa-calendar-days"></i> Seg a Sex: 05h às 23h | Sáb: 08h às 16h</p>
-                </div>
-                <div class="area-botoes">
-                    <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
-                    <a href="#" target="_blank" class="btn btn-mapa">COMO CHEGAR</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="lorena" class="unidade">
+        <section id="un-lorena" class="unidade">
             <div class="unidade-foto-container"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800"></div>
             <div class="unidade-content">
                 <h2>Lorena - Centro</h2>
                 <div class="unidade-info">
-                    <p><i class="fas fa-location-dot"></i> Av. São José, 192</p>
-                    <p><i class="fas fa-calendar-days"></i> Seg a Sex: 06h às 23h | Sáb: 08h às 14h</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. São José, 192</p>
+                    <p><i class="fas fa-clock"></i> Seg a Sex: 06h às 23h | Sáb: 08h às 14h</p>
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512981285014" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
@@ -165,13 +158,13 @@
             </div>
         </section>
 
-        <section id="cachoeira" class="unidade">
+        <section id="un-cachoeira" class="unidade">
             <div class="unidade-foto-container"><img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=800"></div>
             <div class="unidade-content">
                 <h2>Cachoeira Paulista</h2>
                 <div class="unidade-info">
-                    <p><i class="fas fa-location-dot"></i> R. Sete de Setembro, 593</p>
-                    <p><i class="fas fa-calendar-days"></i> Seg a Sex: 06h às 22h | Sáb: 09h às 13h</p>
+                    <p><i class="fas fa-map-marker-alt"></i> R. Sete de Setembro, 593</p>
+                    <p><i class="fas fa-clock"></i> Seg a Sex: 06h às 22h | Sáb: 09h às 13h</p>
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
@@ -180,13 +173,13 @@
             </div>
         </section>
 
-        <section id="cruzeiro" class="unidade">
+        <section id="un-cruzeiro" class="unidade">
             <div class="unidade-foto-container"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800"></div>
             <div class="unidade-content">
                 <h2>Cruzeiro - Centro</h2>
                 <div class="unidade-info">
-                    <p><i class="fas fa-location-dot"></i> R. Eng. Antônio Penido, 1142</p>
-                    <p><i class="fas fa-calendar-days"></i> Seg a Sex: 05h às 23h | Sáb: 08h às 14h</p>
+                    <p><i class="fas fa-map-marker-alt"></i> R. Eng. Antônio Penido, 1142</p>
+                    <p><i class="fas fa-clock"></i> Seg a Sex: 05h às 23h | Sáb: 08h às 14h</p>
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982452400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
@@ -200,8 +193,7 @@
         <div class="dropdown-footer">
             <button class="dropbtn-footer"><i class="fab fa-instagram"></i> SIGA-NOS NAS REDES SOCIAIS</button>
             <div class="dropdown-content-footer">
-                <a href="https://www.instagram.com/guarafitacademias/" target="_blank">Vila Guara</a>
-                <a href="https://www.instagram.com/guarafitacademias/" target="_blank">Pedregulho</a>
+                <a href="https://www.instagram.com/guarafitacademias/" target="_blank">Guaratinguetá</a>
                 <a href="https://www.instagram.com/guarafitlorena/" target="_blank">Lorena</a>
                 <a href="https://www.instagram.com/guarafitacademias/" target="_blank">Cachoeira Paulista</a>
                 <a href="https://www.instagram.com/guarafitcruzeiro/" target="_blank">Cruzeiro</a>
@@ -210,6 +202,28 @@
     </div>
 
     <footer><p>© 2024 Guarafit Academias</p></footer>
+
+    <script>
+        const sections = document.querySelectorAll(".unidade");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href").includes(current)) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
