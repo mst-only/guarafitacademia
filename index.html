@@ -31,15 +31,16 @@
         .nav-link { 
             font-family: 'Oswald', sans-serif; font-size: 0.75rem; text-transform: uppercase;
             color: #666 !important; display: flex; flex-direction: column; align-items: center;
-            gap: 5px; transition: 0.3s; flex: 1; text-align: center;
+            gap: 5px; transition: 0.3s; flex: 1; text-align: center; cursor: pointer;
         }
         .nav-link i { font-size: 1.2rem; }
         .nav-link.active { color: var(--laranja) !important; }
 
-        /* CARROSSEL E CARDS */
+        /* CONTEÚDO */
         .container { padding: 20px; max-width: 650px; margin: 0 auto; }
-        .unidade { background-color: var(--cinza-card); margin-bottom: 50px; border-radius: 20px; overflow: hidden; border: 1px solid #222; scroll-margin-top: 100px; }
+        .unidade { background-color: var(--cinza-card); margin-bottom: 50px; border-radius: 20px; overflow: hidden; scroll-margin-top: 100px; border: none; }
         
+        /* CARROSSEL */
         .carousel-wrapper { position: relative; width: 100%; height: 320px; overflow: hidden; }
         .carousel-container { 
             display: flex; overflow-x: auto; scroll-snap-type: x mandatory; 
@@ -54,29 +55,33 @@
         .dot.active { background: var(--laranja); width: 20px; border-radius: 10px; }
 
         .unidade-content { padding: 25px; }
-        .unidade h2 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 1.6rem; margin: 0 0 10px 0; }
-        .unidade-info p { font-size: 0.9rem; color: #ccc; margin: 8px 0; display: flex; gap: 10px; }
+        .unidade h2 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 1.6rem; margin: 0 0 10px 0; text-transform: uppercase; }
+        .unidade-info p { font-size: 0.9rem; color: #ccc; margin: 8px 0; display: flex; gap: 10px; line-height: 1.4; }
         .unidade-info i { color: var(--laranja); width: 18px; text-align: center; }
 
+        /* BOTÕES */
         .area-botoes { display: flex; gap: 10px; margin-top: 20px; }
-        .btn { flex: 1; padding: 15px; text-align: center; font-weight: 700; border-radius: 10px; font-size: 0.8rem; border: none; cursor: pointer; display: block; }
+        .btn { flex: 1; padding: 15px; text-align: center; font-weight: 700; border-radius: 10px; font-size: 0.8rem; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; }
         .btn-matricula { background-color: var(--laranja) !important; }
-        .btn-mapa { background-color: var(--cinza-botao) !important; border: 1px solid #333; }
+        .btn-mapa { background-color: var(--cinza-botao) !important; color: #eee !important; }
 
         /* RODAPÉ DROPUP */
-        .footer-social { text-align: center; padding: 40px 20px; background-color: #080808; border-top: 1px solid #111; }
-        .footer-social p { font-size: 0.8rem; color: #666; margin-bottom: 15px; }
+        .footer-social { text-align: center; padding: 60px 20px 20px 20px; background-color: var(--preto); }
+        .footer-social p { font-size: 0.8rem; color: #666; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
         .insta-dropdown { position: relative; display: inline-block; }
-        .insta-main-btn { background: transparent; border: 1px solid #333; padding: 10px 20px; border-radius: 5px; cursor: pointer; color: #aaa; font-size: 0.8rem; display: flex; align-items: center; gap: 8px; }
-        .dropdown-content { display: none; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: #1a1a1a; min-width: 220px; border-radius: 8px; margin-bottom: 5px; box-shadow: 0 -5px 15px rgba(0,0,0,0.5); border: 1px solid #333; }
-        .dropdown-content a { padding: 12px; display: block; border-bottom: 1px solid #222; font-size: 0.8rem; text-align: left; }
-        .dropdown-content a:hover { color: var(--laranja) !important; background: #222; }
+        .insta-main-btn { background: #111; border: 1px solid #222; padding: 12px 25px; border-radius: 30px; cursor: pointer; color: #aaa; font-size: 0.8rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .insta-main-btn:hover { border-color: var(--laranja); color: #fff; }
+        
+        .dropdown-content { display: none; position: absolute; bottom: 110%; left: 50%; transform: translateX(-50%); background: #1a1a1a; min-width: 240px; border-radius: 12px; box-shadow: 0 -10px 25px rgba(0,0,0,0.8); border: 1px solid #333; overflow: hidden; }
+        .dropdown-content a { padding: 15px; display: block; border-bottom: 1px solid #222; font-size: 0.8rem; text-align: center; transition: 0.2s; }
+        .dropdown-content a:last-child { border-bottom: none; }
+        .dropdown-content a:hover { background: var(--laranja); color: white !important; }
         .insta-dropdown:hover .dropdown-content { display: block; }
 
-        footer { padding: 20px; text-align: center; color: #333; font-size: 0.7rem; }
+        footer { padding: 40px 20px; text-align: center; color: #333; font-size: 0.7rem; }
 
         @media (max-width: 480px) {
-            .nav-link { font-size: 0.6rem; }
+            .nav-link { font-size: 0.65rem; }
             .area-botoes { flex-direction: column; }
             .carousel-wrapper { height: 260px; }
         }
@@ -86,16 +91,16 @@
 
     <header>
         <a href="#" class="logo-box">
-            <img src="logo-guarafit.png" alt="Guaráfit Academias">
+            <img src="logo-guarafit.png" alt="Guarafit Academias">
         </a>
     </header>
 
     <nav>
         <div class="nav-container">
-            <a href="#guara-centro" class="nav-link active"><i class="fas fa-dumbbell"></i> GUARÁ</a>
-            <a href="#lorena" class="nav-link"><i class="fas fa-dumbbell"></i> LORENA</a>
-            <a href="#cachoeira" class="nav-link"><i class="fas fa-dumbbell"></i> CACHOEIRA</a>
-            <a href="#cruzeiro" class="nav-link"><i class="fas fa-dumbbell"></i> CRUZEIRO</a>
+            <a href="#guara-centro" class="nav-link active"><i class="fas fa-location-dot"></i> GUARÁ</a>
+            <a href="#lorena" class="nav-link"><i class="fas fa-location-dot"></i> LORENA</a>
+            <a href="#cachoeira" class="nav-link"><i class="fas fa-location-dot"></i> CACHOEIRA</a>
+            <a href="#cruzeiro" class="nav-link"><i class="fas fa-location-dot"></i> CRUZEIRO</a>
         </div>
     </nav>
 
@@ -116,7 +121,7 @@
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
-                    <a href="https://maps.app.goo.gl/3A7L4L5A7L4" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
+                    <a href="https://maps.app.goo.gl/9uTzU2Pz8eX6E9Yv8" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
                 </div>
             </div>
         </section>
@@ -125,8 +130,9 @@
             <div class="carousel-wrapper">
                 <div class="carousel-container">
                     <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800"></div>
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=800"></div>
                 </div>
-                <div class="carousel-dots"><div class="dot active"></div></div>
+                <div class="carousel-dots"><div class="dot active"></div><div class="dot"></div></div>
             </div>
             <div class="unidade-content">
                 <h2>Guaratinguetá - Pedregulho</h2>
@@ -136,7 +142,7 @@
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
-                    <a href="https://maps.app.goo.gl/PedregulhoLink" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
+                    <a href="https://maps.app.goo.gl/Yj8k5V9n8Z7rX1s79" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
                 </div>
             </div>
         </section>
@@ -144,8 +150,9 @@
         <section id="lorena" class="unidade">
             <div class="carousel-wrapper">
                 <div class="carousel-container">
-                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=800"></div>
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1574673003664-f5bc707b8979?w=800"></div>
                 </div>
+                <div class="carousel-dots"><div class="dot active"></div></div>
             </div>
             <div class="unidade-content">
                 <h2>Lorena - Centro</h2>
@@ -155,7 +162,7 @@
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512981285014" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
-                    <a href="https://maps.app.goo.gl/LorenaLink" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
+                    <a href="https://maps.app.goo.gl/K6V8M8Z7rX1s79j8" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
                 </div>
             </div>
         </section>
@@ -163,8 +170,9 @@
         <section id="cachoeira" class="unidade">
             <div class="carousel-wrapper">
                 <div class="carousel-container">
-                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1574673003664-f5bc707b8979?w=800"></div>
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1590239926620-1124ca85aa41?w=800"></div>
                 </div>
+                <div class="carousel-dots"><div class="dot active"></div></div>
             </div>
             <div class="unidade-content">
                 <h2>Cachoeira Paulista</h2>
@@ -174,7 +182,7 @@
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
-                    <a href="https://maps.app.goo.gl/CachoeiraLink" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
+                    <a href="https://maps.app.goo.gl/M4V8M8Z7rX1s79k9" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
                 </div>
             </div>
         </section>
@@ -184,6 +192,7 @@
                 <div class="carousel-container">
                     <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800"></div>
                 </div>
+                <div class="carousel-dots"><div class="dot active"></div></div>
             </div>
             <div class="unidade-content">
                 <h2>Cruzeiro</h2>
@@ -193,7 +202,7 @@
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982452400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
-                    <a href="https://maps.app.goo.gl/CruzeiroLink" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
+                    <a href="https://maps.app.goo.gl/X9V8M8Z7rX1s79L0" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
                 </div>
             </div>
         </section>
@@ -215,6 +224,7 @@
     <footer><p>© 2026 Guarafit Academias</p></footer>
 
     <script>
+        // Lógica dos Dots do Carrossel
         const carousels = document.querySelectorAll('.carousel-container');
         carousels.forEach(carousel => {
             carousel.addEventListener('scroll', () => {
@@ -224,16 +234,25 @@
             });
         });
 
+        // Lógica de Destaque no Menu (Scroll Spy)
         const sections = document.querySelectorAll("section[id]");
         window.addEventListener("scroll", () => {
             let current = "";
             sections.forEach(section => {
-                if (window.pageYOffset >= (section.offsetTop - 160)) { current = section.getAttribute("id"); }
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute("id");
+                }
             });
+
+            // Regra especial: Pedregulho ativa o link de GUARÁ
             if(current === "guara-pedregulho") current = "guara-centro";
+
             document.querySelectorAll(".nav-link").forEach(link => {
                 link.classList.remove("active");
-                if (link.getAttribute("href").includes(current)) { link.classList.add("active"); }
+                if (link.getAttribute("href").includes(current) && current !== "") {
+                    link.classList.add("active");
+                }
             });
         });
     </script>
