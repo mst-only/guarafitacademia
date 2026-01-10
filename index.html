@@ -20,23 +20,23 @@
 
         body { background-color: var(--preto); color: #ffffff; font-family: 'Poppins', sans-serif; margin: 0; overflow-x: hidden; }
         
-        /* HEADER */
+        /* HEADER - LOGO AMPLIADO */
         header { padding: 45px 0 20px 0; text-align: center; display: flex; justify-content: center; align-items: center; }
         .logo-box { display: block; width: 320px; max-width: 85%; }
         .logo-box img { width: 100%; height: auto; display: block; image-rendering: -webkit-optimize-contrast; }
 
-        /* MENU NAVEGAÇÃO */
+        /* MENU NAVEGAÇÃO SEM LINHAS */
         nav { background-color: var(--preto); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
         .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: center; gap: 5px; }
         .nav-link { 
-            font-family: 'Oswald', sans-serif; font-size: 0.75rem; text-transform: uppercase;
+            font-family: 'Oswald', sans-serif; font-size: 0.7rem; text-transform: uppercase;
             color: #666 !important; display: flex; flex-direction: column; align-items: center;
             gap: 5px; transition: 0.3s; flex: 1; text-align: center;
         }
         .nav-link i { font-size: 1.2rem; }
         .nav-link.active { color: var(--laranja) !important; }
 
-        /* CARROSSEL E CARDS */
+        /* CARDS DAS UNIDADES */
         .container { padding: 20px; max-width: 650px; margin: 0 auto; }
         .unidade { background-color: var(--cinza-card); margin-bottom: 50px; border-radius: 20px; overflow: hidden; border: 1px solid #222; scroll-margin-top: 100px; }
         .carousel-wrapper { position: relative; width: 100%; height: 280px; overflow: hidden; }
@@ -55,33 +55,31 @@
         .btn-matricula { background-color: var(--laranja) !important; }
         .btn-mapa { background-color: var(--cinza-botao) !important; border: 1px solid #333; }
 
-        /* RODAPÉ E REDES SOCIAIS */
-        .footer-social { text-align: center; padding: 60px 20px; background-color: #080808; }
-        .footer-social h3 { font-family: 'Oswald', sans-serif; margin-bottom: 20px; letter-spacing: 1px; }
+        /* RODAPÉ SUTIL COM MENU OCULTO */
+        .footer-social { text-align: center; padding: 40px 20px; background-color: #080808; border-top: 1px solid #111; }
+        .footer-social p { font-size: 0.8rem; color: #666; margin-bottom: 15px; }
         
         .insta-dropdown { position: relative; display: inline-block; }
         .insta-main-btn { 
-            background: #222; border: 1px solid #444; padding: 15px 40px; 
-            border-radius: 50px; cursor: pointer; display: flex; align-items: center; gap: 10px;
+            background: transparent; border: 1px solid #333; padding: 10px 20px; 
+            border-radius: 5px; cursor: pointer; display: flex; align-items: center; gap: 8px;
+            font-size: 0.8rem; color: #aaa;
         }
-        .insta-main-btn i { color: #E1306C; font-size: 1.5rem; }
+        .insta-main-btn i { color: #E1306C; }
 
         .dropdown-content {
             display: none; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
-            background-color: #1a1a1a; min-width: 250px; border-radius: 15px; overflow: hidden;
-            box-shadow: 0 -10px 25px rgba(0,0,0,0.5); margin-bottom: 10px; z-index: 10;
+            background-color: #1a1a1a; min-width: 200px; border-radius: 8px; overflow: hidden;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.5); margin-bottom: 5px; z-index: 10;
         }
-        .dropdown-content a { 
-            padding: 15px; display: block; border-bottom: 1px solid #252525; 
-            font-size: 0.9rem; text-align: left; transition: 0.3s;
-        }
-        .dropdown-content a:hover { background: var(--laranja); }
+        .dropdown-content a { padding: 12px; display: block; border-bottom: 1px solid #252525; font-size: 0.8rem; text-align: left; }
+        .dropdown-content a:hover { background: #222; color: var(--laranja) !important; }
         .insta-dropdown:hover .dropdown-content { display: block; }
 
-        footer { padding: 30px; text-align: center; color: #444; font-size: 0.75rem; }
+        footer { padding: 20px; text-align: center; color: #333; font-size: 0.7rem; }
 
         @media (max-width: 480px) {
-            .nav-link { font-size: 0.6rem; }
+            .nav-link { font-size: 0.55rem; }
             .area-botoes { flex-direction: column; }
         }
     </style>
@@ -96,8 +94,8 @@
 
     <nav>
         <div class="nav-container">
-            <a href="#guara-centro" class="nav-link active"><i class="fas fa-dumbbell"></i> GUARA CENTRO</a>
-            <a href="#guara-pedregulho" class="nav-link"><i class="fas fa-dumbbell"></i> GUARA PEDRE</a>
+            <a href="#guara-centro" class="nav-link active"><i class="fas fa-dumbbell"></i> GUARÁ CENTRO</a>
+            <a href="#guara-pedregulho" class="nav-link"><i class="fas fa-dumbbell"></i> GUARÁ PEDRE</a>
             <a href="#lorena" class="nav-link"><i class="fas fa-dumbbell"></i> LORENA</a>
             <a href="#cachoeira" class="nav-link"><i class="fas fa-dumbbell"></i> CACHOEIRA</a>
             <a href="#cruzeiro" class="nav-link"><i class="fas fa-dumbbell"></i> CRUZEIRO</a>
@@ -106,46 +104,32 @@
 
     <main class="container">
         <section id="guara-centro" class="unidade">
-            <div class="carousel-wrapper">
-                <div class="carousel-container">
-                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800"></div>
-                </div>
-            </div>
             <div class="unidade-content">
                 <h2>Guaratinguetá - Centro</h2>
                 <div class="unidade-info">
                     <p><i class="fas fa-map-marker-alt"></i> Av. Nossa Sra. de Fátima, 12</p>
-                    <p><i class="fas fa-clock"></i> Seg a Sex: 06h às 22h | Sáb: 08h às 14h</p>
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
-                    <a href="https://maps.google.com" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
                 </div>
             </div>
         </section>
 
         <section id="guara-pedregulho" class="unidade">
-            <div class="carousel-wrapper">
-                <div class="carousel-container">
-                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800"></div>
-                </div>
-            </div>
             <div class="unidade-content">
                 <h2>Guaratinguetá - Pedregulho</h2>
                 <div class="unidade-info">
                     <p><i class="fas fa-map-marker-alt"></i> Rua Prof. Maria Aparecida, 150</p>
-                    <p><i class="fas fa-clock"></i> Seg a Sex: 06h às 22h | Sáb: 08h às 13h</p>
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
-                    <a href="https://maps.google.com" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
                 </div>
             </div>
         </section>
 
         <section id="lorena" class="unidade">
             <div class="unidade-content">
-                <h2>Lorena</h2>
+                <h2>Lorena - Centro</h2>
                 <div class="unidade-info">
                     <p><i class="fas fa-map-marker-alt"></i> Av. São José, 192</p>
                 </div>
@@ -154,29 +138,51 @@
                 </div>
             </div>
         </section>
-        
-        </main>
+
+        <section id="cachoeira" class="unidade">
+            <div class="unidade-content">
+                <h2>Cachoeira Paulista</h2>
+                <div class="unidade-info">
+                    <p><i class="fas fa-map-marker-alt"></i> R. Sete de Setembro, 593</p>
+                </div>
+                <div class="area-botoes">
+                    <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="cruzeiro" class="unidade">
+            <div class="unidade-content">
+                <h2>Cruzeiro</h2>
+                <div class="unidade-info">
+                    <p><i class="fas fa-map-marker-alt"></i> R. Eng. Antônio Penido, 1142</p>
+                </div>
+                <div class="area-botoes">
+                    <a href="https://wa.me/5512982452400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <div class="footer-social">
-        <h3>SIGA-NOS NAS REDES SOCIAIS</h3>
+        <p>Siga-nos nas redes sociais</p>
         <div class="insta-dropdown">
             <div class="insta-main-btn">
-                <i class="fab fa-instagram"></i> SELECIONE A UNIDADE
+                <i class="fab fa-instagram"></i> NOSSOS INSTAGRAMS
             </div>
             <div class="dropdown-content">
-                <a href="https://instagram.com/guarafit_guaratingueta" target="_blank">Guaratinguetá (Centro)</a>
-                <a href="https://instagram.com/guarafit_pedregulho" target="_blank">Guaratinguetá (Pedregulho)</a>
-                <a href="https://instagram.com/guarafit_lorena" target="_blank">Lorena</a>
-                <a href="https://instagram.com/guarafit_cachoeira" target="_blank">Cachoeira Paulista</a>
-                <a href="https://instagram.com/guarafit_cruzeiro" target="_blank">Cruzeiro</a>
+                <a href="#">@guarafit_guaratingueta</a>
+                <a href="#">@guarafit_pedregulho</a>
+                <a href="#">@guarafit_lorena</a>
+                <a href="#">@guarafit_cachoeira</a>
+                <a href="#">@guarafit_cruzeiro</a>
             </div>
         </div>
     </div>
 
-    <footer><p>© 2026 Guarafit Academias - Todos os direitos reservados</p></footer>
+    <footer><p>© 2026 Guarafit Academias</p></footer>
 
     <script>
-        // Lógica de ScrollSpy para o menu
         const sections = document.querySelectorAll(".unidade");
         const navLinks = document.querySelectorAll(".nav-link");
         window.addEventListener("scroll", () => {
