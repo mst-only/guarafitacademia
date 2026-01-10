@@ -8,19 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* RESET E CONFIGURAÇÕES GERAIS */
         html { scroll-behavior: smooth; }
-        
-        a, a:visited, a:active, a:hover {
-            text-decoration: none !important;
-            color: white !important;
-        }
+        a, a:visited, a:active, a:hover { text-decoration: none !important; color: white !important; }
 
         :root {
             --laranja: #FF6600;
             --preto: #000000;
             --cinza-card: #121212;
-            --cinza-botao: #333333;
+            --cinza-botao: #252525;
+            --instagram: #E1306C;
         }
 
         body {
@@ -32,46 +28,43 @@
 
         header {
             background-color: var(--preto);
-            padding: 20px 10px;
+            padding: 25px 10px;
             text-align: center;
-            border-bottom: 2px solid var(--laranja);
+            border-bottom: 3px solid var(--laranja);
         }
 
         .logo h1 {
             font-family: 'Oswald', sans-serif;
             color: var(--laranja);
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             margin: 0;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
-        /* MENU DE NAVEGAÇÃO RÁPIDA */
         nav {
-            background-color: #080808;
-            padding: 10px 0;
+            background-color: rgba(0,0,0,0.95);
+            padding: 12px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid #222;
+            border-bottom: 1px solid #333;
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             overflow-x: auto;
         }
 
         .nav-link {
             font-family: 'Oswald', sans-serif;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            padding: 5px 10px;
-            white-space: nowrap;
+            padding: 5px 0;
         }
 
         .nav-link:hover { color: var(--laranja) !important; }
 
-        /* HERO SECTION */
         .hero {
-            background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200');
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200');
             background-size: cover;
             background-position: center;
             height: 35vh;
@@ -79,27 +72,13 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            position: relative;
         }
 
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-        }
-
-        .hero-content { position: relative; z-index: 1; }
-        .hero h2 { font-family: 'Oswald', sans-serif; font-size: 2.2rem; text-transform: uppercase; }
+        .hero h2 { font-family: 'Oswald', sans-serif; font-size: 2.5rem; text-transform: uppercase; }
         .laranja-txt { color: var(--laranja); }
 
-        .container {
-            padding: 30px 20px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        .container { padding: 40px 20px; max-width: 600px; margin: 0 auto; }
 
-        /* CARDS DAS UNIDADES */
         .unidade {
             background-color: var(--cinza-card);
             margin-bottom: 50px;
@@ -107,7 +86,7 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             border: 1px solid #222;
-            scroll-margin-top: 80px;
+            scroll-margin-top: 100px;
         }
 
         .unidade-foto-container { width: 100%; height: 220px; }
@@ -117,73 +96,99 @@
         .unidade h2 {
             font-family: 'Oswald', sans-serif;
             color: var(--laranja);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-size: 1.6rem;
             text-transform: uppercase;
         }
 
-        .info p { font-size: 0.9rem; color: #ccc; margin-bottom: 8px; }
+        .info p { font-size: 0.9rem; color: #ccc; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+        .info i { color: var(--laranja); }
 
-        .area-botoes { margin-top: 20px; display: flex; gap: 10px; }
+        .area-botoes { margin-top: 25px; display: flex; gap: 10px; }
 
-        .btn-matricula, .btn-mapa {
-            flex: 1; padding: 15px 5px; text-align: center;
+        .btn {
+            flex: 1; padding: 15px; text-align: center;
             font-weight: 700; border-radius: 8px; font-size: 0.8rem;
+            text-transform: uppercase; transition: 0.3s;
         }
 
         .btn-matricula { background-color: var(--laranja) !important; }
-        .btn-mapa { background-color: var(--cinza-botao) !important; }
+        .btn-mapa { background-color: var(--cinza-botao) !important; border: 1px solid #444; }
+        .btn:hover { transform: translateY(-2px); }
 
-        /* SEÇÃO REDES SOCIAIS NO RODAPÉ */
-        .social-footer {
+        /* RODAPÉ COM INSTAGRAMS */
+        .social-section {
             background-color: #080808;
+            padding: 50px 20px;
+            border-top: 2px solid var(--laranja);
             text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid #222;
         }
 
-        .social-footer h3 {
+        .social-section h3 {
             font-family: 'Oswald', sans-serif;
             color: var(--laranja);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            font-size: 2rem;
+        .insta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .social-icons a i {
+        .insta-item {
+            background: #151515;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #222;
             transition: 0.3s;
         }
 
-        .social-icons a:hover i {
-            color: var(--laranja) !important;
-            transform: translateY(-5px);
+        .insta-item:hover {
+            border-color: var(--instagram);
+            background: #1a1a1a;
+            transform: scale(1.05);
         }
+
+        .insta-item i {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            background: -webkit-linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .insta-item span {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: #eee;
+        }
+
+        .insta-item small { color: #666; font-size: 0.65rem; }
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             color: #444;
             font-size: 0.75rem;
-            background-color: #080808;
+            background-color: #050505;
         }
 
         @media (max-width: 480px) {
             .area-botoes { flex-direction: column; }
+            .insta-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">
-            <h1>GUARAFIT</h1>
-        </div>
+        <div class="logo"><h1>GUARAFIT</h1></div>
     </header>
 
     <nav>
@@ -209,12 +214,12 @@
             <div class="unidade-content">
                 <h2>Guaratinguetá - Vila Guara</h2>
                 <div class="info">
-                    <p>📍 Av. Nossa Sra. de Fátima, 12</p>
-                    <p>⏰ Seg a Sex: 06h às 22h | Sáb: 08h às 12h30</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Nossa Sra. de Fátima, 12</p>
+                    <p><i class="fas fa-clock"></i> Seg a Sex: 06h às 22h | Sáb: 08h às 12h30</p>
                 </div>
                 <div class="area-botoes">
-                    <a href="https://wa.me/5512982572400" target="_blank" class="btn-matricula">MATRICULE-SE</a>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Vila+Guara" target="_blank" class="btn-mapa">COMO CHEGAR</a>
+                    <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Vila+Guara" target="_blank" class="btn btn-mapa">COMO CHEGAR</a>
                 </div>
             </div>
         </section>
@@ -226,12 +231,12 @@
             <div class="unidade-content">
                 <h2>Guaratinguetá - Pedregulho</h2>
                 <div class="info">
-                    <p>📍 Rua Alexandre Fleming, 140</p>
-                    <p>⏰ Seg a Sex: 05h às 23h | Sáb: 08h às 18h</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Alexandre Fleming, 140</p>
+                    <p><i class="fas fa-clock"></i> Seg a Sex: 05h às 23h | Sáb: 08h às 18h</p>
                 </div>
                 <div class="area-botoes">
-                    <a href="https://wa.me/5512982572400" target="_blank" class="btn-matricula">MATRICULE-SE</a>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Pedregulho" target="_blank" class="btn-mapa">COMO CHEGAR</a>
+                    <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Pedregulho" target="_blank" class="btn btn-mapa">COMO CHEGAR</a>
                 </div>
             </div>
         </section>
@@ -243,12 +248,12 @@
             <div class="unidade-content">
                 <h2>Lorena - Centro</h2>
                 <div class="info">
-                    <p>📍 Av. São José, 192</p>
-                    <p>⏰ Seg a Sex: 06h às 23h | Sáb/Dom: 08h às 12h</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. São José, 192</p>
+                    <p><i class="fas fa-clock"></i> Seg a Sex: 06h às 23h | Sáb/Dom: 08h às 12h</p>
                 </div>
                 <div class="area-botoes">
-                    <a href="https://wa.me/5512981285014" target="_blank" class="btn-matricula">MATRICULE-SE</a>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Lorena" target="_blank" class="btn-mapa">COMO CHEGAR</a>
+                    <a href="https://wa.me/5512981285014" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Lorena" target="_blank" class="btn btn-mapa">COMO CHEGAR</a>
                 </div>
             </div>
         </section>
@@ -260,12 +265,12 @@
             <div class="unidade-content">
                 <h2>Cachoeira Paulista</h2>
                 <div class="info">
-                    <p>📍 R. Sete de Setembro, 593 - Centro</p>
-                    <p>⏰ Seg a Sex: 06h às 22h</p>
+                    <p><i class="fas fa-map-marker-alt"></i> R. Sete de Setembro, 593 - Centro</p>
+                    <p><i class="fas fa-clock"></i> Seg a Sex: 06h às 22h</p>
                 </div>
                 <div class="area-botoes">
-                    <a href="https://wa.me/5512982572400" target="_blank" class="btn-matricula">MATRICULE-SE</a>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Cachoeira+Paulista" target="_blank" class="btn-mapa">COMO CHEGAR</a>
+                    <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Cachoeira+Paulista" target="_blank" class="btn btn-mapa">COMO CHEGAR</a>
                 </div>
             </div>
         </section>
@@ -277,23 +282,46 @@
             <div class="unidade-content">
                 <h2>Cruzeiro - Centro</h2>
                 <div class="info">
-                    <p>📍 R. Eng. Antônio Penido, 1142</p>
-                    <p>⏰ Seg a Sex: 05h às 23h | Sáb/Dom: 08h às 12h</p>
+                    <p><i class="fas fa-map-marker-alt"></i> R. Eng. Antônio Penido, 1142</p>
+                    <p><i class="fas fa-clock"></i> Seg a Sex: 05h às 23h | Sáb/Dom: 08h às 12h</p>
                 </div>
                 <div class="area-botoes">
-                    <a href="https://wa.me/5512982452400" target="_blank" class="btn-matricula">MATRICULE-SE</a>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Cruzeiro" target="_blank" class="btn-mapa">COMO CHEGAR</a>
+                    <a href="https://wa.me/5512982452400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Cruzeiro" target="_blank" class="btn btn-mapa">COMO CHEGAR</a>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <section class="social-footer">
-        <h3>Siga a Guarafit</h3>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/guarafitacademias/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/guarafitacademias" target="_blank"><i class="fab fa-facebook"></i></a>
+    <section class="social-section">
+        <h3>Siga nossas unidades</h3>
+        <div class="insta-grid">
+            <a href="https://www.instagram.com/guarafitacademias/" target="_blank" class="insta-item">
+                <i class="fab fa-instagram"></i>
+                <span>VILA GUARA</span>
+                <small>@guarafit_vguara</small>
+            </a>
+            <a href="https://www.instagram.com/guarafitacademias/" target="_blank" class="insta-item">
+                <i class="fab fa-instagram"></i>
+                <span>PEDREGULHO</span>
+                <small>@guarafit_pedregulho</small>
+            </a>
+            <a href="https://www.instagram.com/guarafitlorena/" target="_blank" class="insta-item">
+                <i class="fab fa-instagram"></i>
+                <span>LORENA</span>
+                <small>@guarafitlorena</small>
+            </a>
+            <a href="https://www.instagram.com/guarafitacademias/" target="_blank" class="insta-item">
+                <i class="fab fa-instagram"></i>
+                <span>CACHOEIRA</span>
+                <small>@guarafit_cp</small>
+            </a>
+            <a href="https://www.instagram.com/guarafitcruzeiro/" target="_blank" class="insta-item">
+                <i class="fab fa-instagram"></i>
+                <span>CRUZEIRO</span>
+                <small>@guarafitcruzeiro</small>
+            </a>
         </div>
     </section>
 
