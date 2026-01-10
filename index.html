@@ -16,135 +16,94 @@
             --preto: #000000;
             --cinza-card: #121212;
             --cinza-botao: #252525;
+            --cinza-pilula: #1a1a1a;
         }
 
         body { background-color: var(--preto); color: #ffffff; font-family: 'Poppins', sans-serif; margin: 0; }
         
-        header { background-color: var(--preto); padding: 30px 10px; text-align: center; }
-        .logo h1 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 3rem; margin: 0; letter-spacing: 4px; }
+        header { background-color: var(--preto); padding: 25px 10px; text-align: center; }
+        .logo h1 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 2.5rem; margin: 0; letter-spacing: 3px; }
 
-        /* MENU DE NAVEGAÇÃO DAS CIDADES - AUMENTADO E COM DESTAQUE */
+        /* MENU TIPO PÍLULAS - ÚTIL E VISÍVEL */
         nav {
-            background-color: rgba(0,0,0,0.98);
-            padding: 20px 0;
+            background-color: var(--preto);
+            padding: 15px 10px;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 2px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
             display: flex;
             justify-content: center;
-            gap: 35px; /* Espaço maior entre cidades */
-            overflow-x: auto;
-            white-space: nowrap;
+            gap: 12px;
+            flex-wrap: wrap; /* Permite quebrar linha no celular */
         }
 
         .nav-link { 
             font-family: 'Oswald', sans-serif; 
-            font-size: 1.1rem; /* Fonte aumentada */
+            font-size: 0.9rem; 
             text-transform: uppercase; 
-            letter-spacing: 2px;
-            position: relative;
+            letter-spacing: 1px;
+            padding: 10px 20px;
+            background-color: var(--cinza-pilula);
+            border: 1px solid #333;
+            border-radius: 50px;
             transition: 0.3s;
-            padding: 5px 0;
+            text-align: center;
         }
 
-        /* Detalhe de destaque no menu das cidades */
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
+        .nav-link:hover, .nav-link:active {
             background-color: var(--laranja);
-            transition: width 0.3s ease;
+            border-color: var(--laranja);
+            transform: translateY(-2px);
         }
 
-        .nav-link:hover::after { width: 100%; }
-        .nav-link:hover { color: var(--laranja) !important; }
-
-        .container { padding: 40px 20px; max-width: 600px; margin: 0 auto; }
+        .container { padding: 30px 20px; max-width: 600px; margin: 0 auto; }
 
         .unidade {
             background-color: var(--cinza-card);
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             border-radius: 15px;
             overflow: hidden;
             border: 1px solid #222;
-            scroll-margin-top: 120px;
+            scroll-margin-top: 140px; /* Ajuste para não cobrir o título ao rolar */
         }
 
-        .unidade-foto-container { width: 100%; height: 250px; }
+        .unidade-foto-container { width: 100%; height: 220px; }
         .unidade-foto-container img { width: 100%; height: 100%; object-fit: cover; }
-        .unidade-content { padding: 30px; }
-        .unidade h2 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 1.8rem; text-transform: uppercase; margin-bottom: 15px; }
-        .info p { font-size: 0.95rem; color: #ccc; margin-bottom: 8px; }
-
-        .area-botoes { margin-top: 25px; display: flex; gap: 12px; }
-        .btn { flex: 1; padding: 16px; text-align: center; font-weight: 700; border-radius: 8px; font-size: 0.85rem; text-transform: uppercase; }
+        .unidade-content { padding: 25px; }
+        .unidade h2 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 1.6rem; text-transform: uppercase; margin: 0 0 15px 0; }
+        
+        .area-botoes { margin-top: 20px; display: flex; gap: 10px; }
+        .btn { flex: 1; padding: 15px; text-align: center; font-weight: 700; border-radius: 8px; font-size: 0.8rem; text-transform: uppercase; }
         .btn-matricula { background-color: var(--laranja) !important; }
         .btn-mapa { background-color: var(--cinza-botao) !important; border: 1px solid #444; }
 
-        /* RODAPÉ E DROPDOWN DAS REDES SOCIAIS - DISCRETO E MENOR */
-        .footer-social {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #080808;
-            border-top: 1px solid #222;
-        }
-
-        .dropdown-footer {
-            position: relative;
-            display: inline-block;
-        }
-
+        /* RODAPÉ REDES SOCIAIS DISCRETO */
+        .footer-social { text-align: center; padding: 40px 20px; background-color: #080808; border-top: 1px solid #222; }
+        .dropdown-footer { position: relative; display: inline-block; }
         .dropbtn-footer {
-            background-color: transparent;
-            border: 1px solid #333; /* Mais fino para ser discreto */
-            color: #888;
-            padding: 10px 20px; 
-            font-size: 0.8rem;
-            font-weight: 400;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: 0.3s;
-            text-transform: uppercase;
+            background: none; border: 1px solid #333; color: #888; padding: 10px 20px; 
+            font-size: 0.8rem; cursor: pointer; border-radius: 4px; text-transform: uppercase;
         }
-
-        .dropbtn-footer:hover { border-color: var(--laranja); color: white; }
-
         .dropdown-content-footer {
-            display: none;
-            position: absolute;
-            bottom: 45px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #1a1a1a;
-            min-width: 180px;
-            box-shadow: 0px 5px 15px rgba(0,0,0,0.8);
-            border: 1px solid #333;
-            border-radius: 4px;
-            z-index: 1000;
+            display: none; position: absolute; bottom: 45px; left: 50%; transform: translateX(-50%);
+            background-color: #1a1a1a; min-width: 180px; border: 1px solid #333; z-index: 1000;
         }
-
-        .dropdown-content-footer a {
-            color: white;
-            padding: 12px 15px;
-            display: block;
-            font-size: 0.8rem;
-            border-bottom: 1px solid #222;
-            text-align: left;
-        }
-
-        .dropdown-content-footer a:hover { background-color: var(--laranja); }
+        .dropdown-content-footer a { color: white; padding: 12px; display: block; font-size: 0.8rem; border-bottom: 1px solid #222; text-align: center; }
         .dropdown-footer:hover .dropdown-content-footer { display: block; }
 
         footer { text-align: center; padding: 20px; color: #444; font-size: 0.7rem; }
 
-        @media (max-width: 480px) { 
-            nav { gap: 20px; padding: 15px 10px; }
-            .nav-link { font-size: 0.9rem; }
-            .area-botoes { flex-direction: column; } 
+        /* AJUSTE MOBILE */
+        @media (max-width: 480px) {
+            .nav-container { display: grid; grid-template-columns: 1fr 1fr; } /* Duas colunas perfeitas */
+            .nav-link { font-size: 0.8rem; padding: 12px 5px; }
+            .area-botoes { flex-direction: column; }
         }
     </style>
 </head>
@@ -153,10 +112,12 @@
     <header><div class="logo"><h1>GUARAFIT</h1></div></header>
 
     <nav>
-        <a href="#guara" class="nav-link">GUARATINGUETÁ</a>
-        <a href="#lorena" class="nav-link">LORENA</a>
-        <a href="#cachoeira" class="nav-link">CACHOEIRA PAULISTA</a>
-        <a href="#cruzeiro" class="nav-link">CRUZEIRO</a>
+        <div class="nav-container">
+            <a href="#guara" class="nav-link">GUARATINGUETÁ</a>
+            <a href="#lorena" class="nav-link">LORENA</a>
+            <a href="#cachoeira" class="nav-link">CACHOEIRA PAULISTA</a>
+            <a href="#cruzeiro" class="nav-link">CRUZEIRO</a>
+        </div>
     </nav>
 
     <main class="container">
@@ -164,7 +125,6 @@
             <div class="unidade-foto-container"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800"></div>
             <div class="unidade-content">
                 <h2>Guaratinguetá - Vila Guara</h2>
-                <div class="info"><p>📍 Av. Nossa Sra. de Fátima, 12</p></div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
                     <a href="#" target="_blank" class="btn btn-mapa">COMO CHEGAR</a>
@@ -176,7 +136,6 @@
             <div class="unidade-foto-container"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800"></div>
             <div class="unidade-content">
                 <h2>Guaratinguetá - Pedregulho</h2>
-                <div class="info"><p>📍 Rua Alexandre Fleming, 140</p></div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
                     <a href="#" target="_blank" class="btn btn-mapa">COMO CHEGAR</a>
@@ -188,7 +147,6 @@
             <div class="unidade-foto-container"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800"></div>
             <div class="unidade-content">
                 <h2>Lorena - Centro</h2>
-                <div class="info"><p>📍 Av. São José, 192</p></div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512981285014" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
                     <a href="#" target="_blank" class="btn btn-mapa">COMO CHEGAR</a>
@@ -200,7 +158,6 @@
             <div class="unidade-foto-container"><img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=800"></div>
             <div class="unidade-content">
                 <h2>Cachoeira Paulista</h2>
-                <div class="info"><p>📍 R. Sete de Setembro, 593</p></div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
                     <a href="#" target="_blank" class="btn btn-mapa">COMO CHEGAR</a>
@@ -212,7 +169,6 @@
             <div class="unidade-foto-container"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800"></div>
             <div class="unidade-content">
                 <h2>Cruzeiro - Centro</h2>
-                <div class="info"><p>📍 R. Eng. Antônio Penido, 1142</p></div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982452400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
                     <a href="#" target="_blank" class="btn btn-mapa">COMO CHEGAR</a>
@@ -223,9 +179,7 @@
 
     <div class="footer-social">
         <div class="dropdown-footer">
-            <button class="dropbtn-footer">
-                <i class="fab fa-instagram"></i> SIGA-NOS NAS REDES SOCIAIS
-            </button>
+            <button class="dropbtn-footer"><i class="fab fa-instagram"></i> SIGA-NOS NAS REDES SOCIAIS</button>
             <div class="dropdown-content-footer">
                 <a href="https://www.instagram.com/guarafitacademias/" target="_blank">Vila Guara</a>
                 <a href="https://www.instagram.com/guarafitacademias/" target="_blank">Pedregulho</a>
