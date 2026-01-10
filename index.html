@@ -25,7 +25,7 @@
         .logo-box { display: block; width: 320px; max-width: 85%; }
         .logo-box img { width: 100%; height: auto; display: block; image-rendering: -webkit-optimize-contrast; }
 
-        /* MENU NAVEGAÇÃO (SEM PEDREGULHO) */
+        /* MENU NAVEGAÇÃO */
         nav { background-color: var(--preto); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
         .nav-container { max-width: 900px; margin: 0 auto; display: flex; justify-content: center; gap: 5px; }
         .nav-link { 
@@ -36,7 +36,7 @@
         .nav-link i { font-size: 1.2rem; }
         .nav-link.active { color: var(--laranja) !important; }
 
-        /* CARROSSEL E ESTRUTURA DAS UNIDADES */
+        /* CARROSSEL E CARDS */
         .container { padding: 20px; max-width: 650px; margin: 0 auto; }
         .unidade { background-color: var(--cinza-card); margin-bottom: 50px; border-radius: 20px; overflow: hidden; border: 1px solid #222; scroll-margin-top: 100px; }
         
@@ -59,17 +59,17 @@
         .unidade-info i { color: var(--laranja); width: 18px; text-align: center; }
 
         .area-botoes { display: flex; gap: 10px; margin-top: 20px; }
-        .btn { flex: 1; padding: 15px; text-align: center; font-weight: 700; border-radius: 10px; font-size: 0.8rem; border: none; cursor: pointer; }
+        .btn { flex: 1; padding: 15px; text-align: center; font-weight: 700; border-radius: 10px; font-size: 0.8rem; border: none; cursor: pointer; display: block; }
         .btn-matricula { background-color: var(--laranja) !important; }
         .btn-mapa { background-color: var(--cinza-botao) !important; border: 1px solid #333; }
 
-        /* RODAPÉ SUTIL */
+        /* RODAPÉ DROPUP */
         .footer-social { text-align: center; padding: 40px 20px; background-color: #080808; border-top: 1px solid #111; }
         .footer-social p { font-size: 0.8rem; color: #666; margin-bottom: 15px; }
         .insta-dropdown { position: relative; display: inline-block; }
         .insta-main-btn { background: transparent; border: 1px solid #333; padding: 10px 20px; border-radius: 5px; cursor: pointer; color: #aaa; font-size: 0.8rem; display: flex; align-items: center; gap: 8px; }
-        .dropdown-content { display: none; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: #1a1a1a; min-width: 200px; border-radius: 8px; margin-bottom: 5px; box-shadow: 0 -5px 15px rgba(0,0,0,0.5); border: 1px solid #333; }
-        .dropdown-content a { padding: 12px; display: block; border-bottom: 1px solid #222; font-size: 0.8rem; text-align: left; transition: 0.3s; }
+        .dropdown-content { display: none; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: #1a1a1a; min-width: 220px; border-radius: 8px; margin-bottom: 5px; box-shadow: 0 -5px 15px rgba(0,0,0,0.5); border: 1px solid #333; }
+        .dropdown-content a { padding: 12px; display: block; border-bottom: 1px solid #222; font-size: 0.8rem; text-align: left; }
         .dropdown-content a:hover { color: var(--laranja) !important; background: #222; }
         .insta-dropdown:hover .dropdown-content { display: block; }
 
@@ -78,7 +78,7 @@
         @media (max-width: 480px) {
             .nav-link { font-size: 0.6rem; }
             .area-botoes { flex-direction: column; }
-            .carousel-wrapper { height: 250px; }
+            .carousel-wrapper { height: 260px; }
         }
     </style>
 </head>
@@ -111,11 +111,12 @@
             <div class="unidade-content">
                 <h2>Guaratinguetá - Centro</h2>
                 <div class="unidade-info">
-                    <p><i class="fas fa-map-marker-alt"></i> Av. Nossa Sra. de Fátima, 12</p>
-                    <p><i class="fas fa-clock"></i> Seg a Sex: 06h às 22h | Sáb: 08h às 14h</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Juscelino Kubitscheck de Oliveira, 1031</p>
+                    <p><i class="fas fa-clock"></i> Seg a Sex: 05:30h às 23h | Sáb: 08h às 14h</p>
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
+                    <a href="https://maps.app.goo.gl/3A7L4L5A7L4" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
                 </div>
             </div>
         </section>
@@ -125,15 +126,17 @@
                 <div class="carousel-container">
                     <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800"></div>
                 </div>
+                <div class="carousel-dots"><div class="dot active"></div></div>
             </div>
             <div class="unidade-content">
                 <h2>Guaratinguetá - Pedregulho</h2>
                 <div class="unidade-info">
-                    <p><i class="fas fa-map-marker-alt"></i> Rua Prof. Maria Aparecida, 150</p>
-                    <p><i class="fas fa-clock"></i> Seg a Sex: 06h às 22h | Sáb: 08h às 13h</p>
+                    <p><i class="fas fa-map-marker-alt"></i> R. Alexandre Fleming, 140</p>
+                    <p><i class="fas fa-clock"></i> Seg a Sex: 05:30h às 23h | Sáb: 08h às 14h</p>
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
+                    <a href="https://maps.app.goo.gl/PedregulhoLink" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
                 </div>
             </div>
         </section>
@@ -143,16 +146,16 @@
                 <div class="carousel-container">
                     <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=800"></div>
                 </div>
-                <div class="carousel-dots"><div class="dot active"></div></div>
             </div>
             <div class="unidade-content">
                 <h2>Lorena - Centro</h2>
                 <div class="unidade-info">
                     <p><i class="fas fa-map-marker-alt"></i> Av. São José, 192</p>
-                    <p><i class="fas fa-clock"></i> Seg a Sex: 06h às 23h | Sáb: 08h às 14h</p>
+                    <p><i class="fas fa-clock"></i> Seg a Sex: 06h às 23h | Sáb: 08h às 18h</p>
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512981285014" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
+                    <a href="https://maps.app.goo.gl/LorenaLink" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
                 </div>
             </div>
         </section>
@@ -171,6 +174,7 @@
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
+                    <a href="https://maps.app.goo.gl/CachoeiraLink" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
                 </div>
             </div>
         </section>
@@ -185,10 +189,11 @@
                 <h2>Cruzeiro</h2>
                 <div class="unidade-info">
                     <p><i class="fas fa-map-marker-alt"></i> R. Eng. Antônio Penido, 1142</p>
-                    <p><i class="fas fa-clock"></i> Seg a Sex: 05h às 23h | Sáb: 08h às 14h</p>
+                    <p><i class="fas fa-clock"></i> Seg a Sex: 05h às 23h | Sáb: 08h às 18h</p>
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982452400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
+                    <a href="https://maps.app.goo.gl/CruzeiroLink" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
                 </div>
             </div>
         </section>
@@ -197,12 +202,12 @@
     <div class="footer-social">
         <p>Siga-nos nas redes sociais</p>
         <div class="insta-dropdown">
-            <div class="insta-main-btn"><i class="fab fa-instagram"></i> NOSSAS REDES</div>
+            <div class="insta-main-btn"><i class="fab fa-instagram"></i> NOSSOS INSTAGRAMS</div>
             <div class="dropdown-content">
-                <a href="#">@guarafit_guaratingueta</a>
-                <a href="#">@guarafit_lorena</a>
-                <a href="#">@guarafit_cachoeira</a>
-                <a href="#">@guarafit_cruzeiro</a>
+                <a href="https://www.instagram.com/guarafit_guaratingueta/" target="_blank">@guarafit_guaratingueta</a>
+                <a href="https://www.instagram.com/guarafit_lorena/" target="_blank">@guarafit_lorena</a>
+                <a href="https://www.instagram.com/guarafit_cachoeira/" target="_blank">@guarafit_cachoeira</a>
+                <a href="https://www.instagram.com/guarafit_cruzeiro/" target="_blank">@guarafit_cruzeiro</a>
             </div>
         </div>
     </div>
@@ -210,7 +215,6 @@
     <footer><p>© 2026 Guarafit Academias</p></footer>
 
     <script>
-        // Lógica do Carrossel (Deslize e Pontos)
         const carousels = document.querySelectorAll('.carousel-container');
         carousels.forEach(carousel => {
             carousel.addEventListener('scroll', () => {
@@ -220,16 +224,13 @@
             });
         });
 
-        // ScrollSpy (Menu ativo na rolagem)
         const sections = document.querySelectorAll("section[id]");
         window.addEventListener("scroll", () => {
             let current = "";
             sections.forEach(section => {
                 if (window.pageYOffset >= (section.offsetTop - 160)) { current = section.getAttribute("id"); }
             });
-            // Mantém Guará ativo mesmo em Pedregulho
             if(current === "guara-pedregulho") current = "guara-centro";
-            
             document.querySelectorAll(".nav-link").forEach(link => {
                 link.classList.remove("active");
                 if (link.getAttribute("href").includes(current)) { link.classList.add("active"); }
