@@ -1,9 +1,9 @@
-/* Cores da Academia */
 :root {
     --laranja: #FF6600;
     --preto: #000000;
     --cinza: #1a1a1a;
     --branco: #ffffff;
+    --laranja-hover: #e65c00;
 }
 
 * {
@@ -15,50 +15,84 @@
 body {
     background-color: var(--preto);
     color: var(--branco);
-    font-family: Arial, sans-serif; /* Simples para começar */
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
 }
 
 header {
     background-color: var(--cinza);
-    padding: 20px;
+    padding: 25px;
     text-align: center;
-    border-bottom: 3px solid var(--laranja);
+    border-bottom: 4px solid var(--laranja);
 }
 
 .logo h1 {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 3px;
+    font-size: 2rem;
+}
+
+.destaque {
     color: var(--laranja);
-    letter-spacing: 2px;
 }
 
 .container {
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto; /* Centraliza o conteúdo na tela */
+    padding: 30px 20px;
+    max-width: 500px; /* Reduzi um pouco para os cards ficarem mais elegantes */
+    margin: 0 auto;
 }
 
 .unidade {
     background-color: var(--cinza);
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    border-left: 5px solid var(--laranja);
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 12px;
+    border-top: 1px solid #333; /* Detalhe sutil superior */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .unidade h2 {
-    color: var(--laranja);
-    margin-bottom: 10px;
-    font-size: 1.4rem;
+    font-family: 'Oswald', sans-serif;
+    color: var(--branco);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
 }
 
 .unidade p {
-    margin-bottom: 5px;
-    font-size: 1rem;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #ccc;
+}
+
+/* Estilo do Botão Chamativo */
+.area-botoes {
+    margin-top: 20px;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background-color: var(--laranja);
+    color: var(--branco);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--laranja-hover);
+    transform: translateY(-2px); /* Pequeno efeito de subir ao passar o rato */
+    box-shadow: 0 5px 15px rgba(255, 102, 0, 0.4);
 }
 
 footer {
     text-align: center;
-    padding: 20px;
-    color: #666;
+    padding: 30px;
+    color: #555;
     font-size: 0.8rem;
 }
