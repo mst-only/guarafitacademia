@@ -42,6 +42,57 @@
             letter-spacing: 2px;
         }
 
+        /* NOVA HERO SECTION */
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200&auto=format&fit=crop'); /* Imagem de fundo */
+            background-size: cover;
+            background-position: center;
+            height: 50vh; /* Altura da seção */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            margin-bottom: 40px; /* Espaço entre o banner e os cards */
+        }
+
+        .hero::before { /* Camada escura sobre a imagem */
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Escurece a imagem */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1; /* Garante que o texto fique acima da camada escura */
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #eee;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        .laranja-txt {
+            color: var(--laranja);
+        }
+        /* FIM NOVA HERO SECTION */
+
+
         .container {
             padding: 20px;
             max-width: 600px;
@@ -78,10 +129,10 @@
             gap: 12px;
         }
 
-        /* BOTÕES */
         .btn-matricula {
             flex: 1;
-            background-color: #FF6600 !important;
+            background-color: var(--laranja) !important;
+            color: white !important;
             padding: 16px 5px;
             text-align: center;
             font-weight: 700;
@@ -92,7 +143,8 @@
 
         .btn-mapa {
             flex: 1;
-            background-color: #333333 !important;
+            background-color: var(--cinza-botao) !important;
+            color: white !important;
             padding: 16px 5px;
             text-align: center;
             font-weight: 700;
@@ -107,6 +159,16 @@
             color: #555;
             font-size: 0.8rem;
         }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -116,6 +178,13 @@
             <h1>GUARAFIT</h1>
         </div>
     </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>TREINE <span class="laranja-txt">FORTE</span>, VIVA <span class="laranja-txt">MELHOR</span></h2>
+            <p>Conquiste seus objetivos com a melhor estrutura e os melhores profissionais.</p>
+        </div>
+    </section>
 
     <main class="container">
         
@@ -127,7 +196,7 @@
             </div>
             <div class="area-botoes">
                 <a href="https://wa.me/5512982572400" target="_blank" class="btn-matricula">MATRICULE-SE</a>
-                <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Guaratinguetá+Vila+Guara" target="_blank" class="btn-mapa">COMO CHEGAR</a>
+                <a href="https://maps.google.com" target="_blank" class="btn-mapa">COMO CHEGAR</a>
             </div>
         </section>
 
@@ -139,7 +208,7 @@
             </div>
             <div class="area-botoes">
                 <a href="https://wa.me/5512982572400" target="_blank" class="btn-matricula">MATRICULE-SE</a>
-                <a href="https://www.google.com/maps/search/?api=1&query=Academia+Guarafit+Pedregulho+Guaratinguetá" target="_blank" class="btn-mapa">COMO CHEGAR</a>
+                <a href="https://maps.google.com" target="_blank" class="btn-mapa">COMO CHEGAR</a>
             </div>
         </section>
 
@@ -151,7 +220,7 @@
             </div>
             <div class="area-botoes">
                 <a href="https://wa.me/5512981285014" target="_blank" class="btn-matricula">MATRICULE-SE</a>
-                <a href="https://www.google.com/maps/search/?api=1&query=Academia+Guaráfit+Lorena" target="_blank" class="btn-mapa">COMO CHEGAR</a>
+                <a href="https://maps.google.com" target="_blank" class="btn-mapa">COMO CHEGAR</a>
             </div>
         </section>
 
@@ -163,7 +232,7 @@
             </div>
             <div class="area-botoes">
                 <a href="https://wa.me/5512982572400" target="_blank" class="btn-matricula">MATRICULE-SE</a>
-                <a href="https://www.google.com/maps/search/?api=1&query=GuaraFit+Cachoeira+Paulista" target="_blank" class="btn-mapa">COMO CHEGAR</a>
+                <a href="https://maps.google.com" target="_blank" class="btn-mapa">COMO CHEGAR</a>
             </div>
         </section>
 
@@ -175,7 +244,7 @@
             </div>
             <div class="area-botoes">
                 <a href="https://wa.me/5512982452400" target="_blank" class="btn-matricula">MATRICULE-SE</a>
-                <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Cruzeiro" target="_blank" class="btn-mapa">COMO CHEGAR</a>
+                <a href="https://maps.google.com" target="_blank" class="btn-mapa">COMO CHEGAR</a>
             </div>
         </section>
 
