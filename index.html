@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guarafit Academias</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -20,110 +20,124 @@
 
         body { background-color: var(--preto); color: #ffffff; font-family: 'Poppins', sans-serif; margin: 0; }
         
-        header { background-color: var(--preto); padding: 25px 10px; text-align: center; }
-        .logo h1 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 2.2rem; margin: 0; letter-spacing: 4px; }
+        header { background-color: var(--preto); padding: 30px 10px; text-align: center; }
+        .logo h1 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 2.8rem; margin: 0; letter-spacing: 4px; }
 
-        /* MENU OPÇÃO 3: SCROLLSPY INTELIGENTE */
+        /* MENU OPÇÃO 3: AJUSTADO (MAIOR E MAIS VISÍVEL) */
         nav {
             background-color: rgba(0,0,0,0.98);
-            padding: 10px 0;
+            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #222;
+            border-bottom: 2px solid #222;
         }
 
         .nav-container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
         }
 
         .nav-link { 
             font-family: 'Oswald', sans-serif; 
-            font-size: 0.75rem; 
+            font-size: 1rem; /* Aumentado */
             text-transform: uppercase; 
-            letter-spacing: 1px;
-            color: #555 !important; /* Cor discreta quando inativo */
+            letter-spacing: 1.5px;
+            color: #666 !important;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 5px;
-            transition: 0.4s;
-            padding: 5px 10px;
+            gap: 8px;
+            transition: 0.3s all ease-in-out;
+            padding: 10px 15px;
+            flex: 1; /* Distribui o espaço igualmente */
+            max-width: 180px;
         }
 
-        .nav-link i { font-size: 1.2rem; transition: 0.3s; }
+        .nav-link i { 
+            font-size: 1.8rem; /* Ícone bem maior */
+            transition: 0.3s; 
+        }
 
-        /* Estilo da pílula ativa via JavaScript */
+        /* Estilo quando a seção está ativa */
         .nav-link.active {
             color: var(--laranja) !important;
-            transform: scale(1.1);
+            background: rgba(255, 102, 0, 0.05); /* Fundo sutil */
+            border-radius: 12px;
         }
 
-        .nav-link.active i { transform: rotate(-15deg); }
+        .nav-link.active i { 
+            transform: scale(1.2) rotate(-10deg); 
+            filter: drop-shadow(0 0 8px var(--laranja)); /* Brilho no peso */
+        }
 
-        .container { padding: 30px 20px; max-width: 600px; margin: 0 auto; }
+        /* CONTEÚDO DOS CARDS */
+        .container { padding: 40px 20px; max-width: 650px; margin: 0 auto; }
 
         .unidade {
             background-color: var(--cinza-card);
-            margin-bottom: 70px;
-            border-radius: 20px;
+            margin-bottom: 80px;
+            border-radius: 25px;
             overflow: hidden;
             border: 1px solid #222;
-            scroll-margin-top: 100px; /* Importante para o clique no menu cair certo */
+            scroll-margin-top: 140px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .unidade-foto-container { width: 100%; height: 220px; position: relative; }
+        .unidade-foto-container { width: 100%; height: 260px; }
         .unidade-foto-container img { width: 100%; height: 100%; object-fit: cover; }
         
-        .unidade-content { padding: 25px; }
-        .unidade h2 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 1.6rem; text-transform: uppercase; margin-bottom: 15px; }
+        .unidade-content { padding: 35px; }
+        .unidade h2 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 1.8rem; text-transform: uppercase; margin: 0 0 15px 0; }
         
-        .unidade-info p { font-size: 0.85rem; color: #bbb; margin: 6px 0; display: flex; gap: 10px; }
-        .unidade-info i { color: var(--laranja); width: 15px; text-align: center; }
+        .unidade-info { margin-bottom: 25px; }
+        .unidade-info p { font-size: 0.95rem; color: #ccc; margin: 8px 0; display: flex; align-items: flex-start; gap: 12px; }
+        .unidade-info i { color: var(--laranja); margin-top: 4px; font-size: 1rem; }
 
-        .area-botoes { display: flex; gap: 10px; margin-top: 20px; }
-        .btn { flex: 1; padding: 15px; text-align: center; font-weight: 700; border-radius: 8px; font-size: 0.75rem; text-transform: uppercase; }
+        .area-botoes { display: flex; gap: 15px; margin-top: 25px; }
+        .btn { flex: 1; padding: 18px; text-align: center; font-weight: 700; border-radius: 12px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
         .btn-matricula { background-color: var(--laranja) !important; }
-        .btn-mapa { background-color: var(--cinza-botao) !important; border: 1px solid #333; }
+        .btn-mapa { background-color: var(--cinza-botao) !important; border: 1px solid #444; }
 
-        .footer-social { text-align: center; padding: 50px 20px; background-color: #080808; border-top: 1px solid #222; }
-        .dropdown-footer { position: relative; display: inline-block; }
+        /* FOOTER REDES SOCIAIS */
+        .footer-social { text-align: center; padding: 60px 20px; background-color: #080808; border-top: 1px solid #222; }
         .dropbtn-footer {
-            background: none; border: 1px solid #444; color: #888; padding: 12px 25px; 
-            font-size: 0.8rem; cursor: pointer; border-radius: 50px; text-transform: uppercase;
+            background: none; border: 1px solid #444; color: #888; padding: 15px 30px; 
+            font-size: 0.85rem; cursor: pointer; border-radius: 50px; text-transform: uppercase; font-family: 'Oswald', sans-serif;
         }
         .dropdown-content-footer {
-            display: none; position: absolute; bottom: 55px; left: 50%; transform: translateX(-50%);
-            background-color: #1a1a1a; min-width: 200px; border: 1px solid #333; border-radius: 10px; overflow: hidden;
+            display: none; position: absolute; bottom: 65px; left: 50%; transform: translateX(-50%);
+            background-color: #1a1a1a; min-width: 220px; border: 1px solid #333; border-radius: 12px; overflow: hidden;
         }
-        .dropdown-content-footer a { color: white; padding: 15px; display: block; font-size: 0.85rem; border-bottom: 1px solid #222; text-align: center; }
+        .dropdown-content-footer a { color: white; padding: 15px; display: block; border-bottom: 1px solid #222; text-align: center; }
         .dropdown-content-footer a:hover { background-color: var(--laranja); }
         .dropdown-footer:hover .dropdown-content-footer { display: block; }
 
-        footer { text-align: center; padding: 30px; color: #444; font-size: 0.7rem; }
+        footer { text-align: center; padding: 40px; color: #444; font-size: 0.75rem; }
 
+        /* AJUSTE PARA CELULAR */
         @media (max-width: 480px) {
-            .nav-container { gap: 5px; }
-            .nav-link { font-size: 0.6rem; padding: 5px; }
-            .nav-link i { font-size: 1rem; }
+            .nav-container { gap: 5px; padding: 0 5px; }
+            .nav-link { font-size: 0.7rem; padding: 10px 5px; max-width: none; }
+            .nav-link i { font-size: 1.4rem; }
             .area-botoes { flex-direction: column; }
+            .logo h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
-<body data-spy="scroll" data-target=".nav-container">
+<body>
 
     <header><div class="logo"><h1>GUARAFIT</h1></div></header>
 
     <nav>
         <div class="nav-container">
-            <a href="#un-guara" class="nav-link active" id="link-guara"><i class="fas fa-dumbbell"></i> GUARÁ</a>
-            <a href="#un-lorena" class="nav-link" id="link-lorena"><i class="fas fa-dumbbell"></i> LORENA</a>
-            <a href="#un-cachoeira" class="nav-link" id="link-cachoeira"><i class="fas fa-dumbbell"></i> CACHOEIRA</a>
-            <a href="#un-cruzeiro" class="nav-link" id="link-cruzeiro"><i class="fas fa-dumbbell"></i> CRUZEIRO</a>
+            <a href="#un-guara" class="nav-link active"><i class="fas fa-dumbbell"></i> GUARÁ</a>
+            <a href="#un-lorena" class="nav-link"><i class="fas fa-dumbbell"></i> LORENA</a>
+            <a href="#un-cachoeira" class="nav-link"><i class="fas fa-dumbbell"></i> CACHOEIRA</a>
+            <a href="#un-cruzeiro" class="nav-link"><i class="fas fa-dumbbell"></i> CRUZEIRO</a>
         </div>
     </nav>
 
@@ -191,11 +205,11 @@
 
     <div class="footer-social">
         <div class="dropdown-footer">
-            <button class="dropbtn-footer"><i class="fab fa-instagram"></i> SIGA-NOS NAS REDES SOCIAIS</button>
+            <button class="dropbtn-footer"><i class="fab fa-instagram"></i> REDES SOCIAIS</button>
             <div class="dropdown-content-footer">
                 <a href="https://www.instagram.com/guarafitacademias/" target="_blank">Guaratinguetá</a>
                 <a href="https://www.instagram.com/guarafitlorena/" target="_blank">Lorena</a>
-                <a href="https://www.instagram.com/guarafitacademias/" target="_blank">Cachoeira Paulista</a>
+                <a href="https://www.instagram.com/guarafitacademias/" target="_blank">Cachoeira</a>
                 <a href="https://www.instagram.com/guarafitcruzeiro/" target="_blank">Cruzeiro</a>
             </div>
         </div>
@@ -211,7 +225,7 @@
             let current = "";
             sections.forEach((section) => {
                 const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 150) {
+                if (window.pageYOffset >= sectionTop - 200) {
                     current = section.getAttribute("id");
                 }
             });
@@ -224,6 +238,5 @@
             });
         });
     </script>
-
 </body>
 </html>
