@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guarafit Academias</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -19,49 +19,76 @@
         }
 
         body { background-color: var(--preto); color: #ffffff; font-family: 'Poppins', sans-serif; margin: 0; }
-        header { background-color: var(--preto); padding: 25px 10px; text-align: center; }
-        .logo h1 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 2.5rem; margin: 0; letter-spacing: 3px; }
+        
+        header { background-color: var(--preto); padding: 30px 10px; text-align: center; }
+        .logo h1 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 3rem; margin: 0; letter-spacing: 4px; }
 
+        /* MENU DE NAVEGAÇÃO DAS CIDADES - AUMENTADO E COM DESTAQUE */
         nav {
-            background-color: rgba(0,0,0,0.95);
-            padding: 15px 0;
+            background-color: rgba(0,0,0,0.98);
+            padding: 20px 0;
             position: sticky;
             top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #333;
+            z-index: 1000;
+            border-bottom: 2px solid #222;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 35px; /* Espaço maior entre cidades */
             overflow-x: auto;
+            white-space: nowrap;
         }
 
-        .nav-link { font-family: 'Oswald', sans-serif; font-size: 0.85rem; text-transform: uppercase; }
-        
+        .nav-link { 
+            font-family: 'Oswald', sans-serif; 
+            font-size: 1.1rem; /* Fonte aumentada */
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+            position: relative;
+            transition: 0.3s;
+            padding: 5px 0;
+        }
+
+        /* Detalhe de destaque no menu das cidades */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--laranja);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after { width: 100%; }
+        .nav-link:hover { color: var(--laranja) !important; }
+
         .container { padding: 40px 20px; max-width: 600px; margin: 0 auto; }
 
         .unidade {
             background-color: var(--cinza-card);
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             border-radius: 15px;
             overflow: hidden;
             border: 1px solid #222;
+            scroll-margin-top: 120px;
         }
 
-        .unidade-foto-container { width: 100%; height: 220px; }
+        .unidade-foto-container { width: 100%; height: 250px; }
         .unidade-foto-container img { width: 100%; height: 100%; object-fit: cover; }
-        .unidade-content { padding: 25px; }
-        .unidade h2 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 1.6rem; text-transform: uppercase; margin-bottom: 15px; }
-        .info p { font-size: 0.9rem; color: #ccc; margin-bottom: 8px; }
+        .unidade-content { padding: 30px; }
+        .unidade h2 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 1.8rem; text-transform: uppercase; margin-bottom: 15px; }
+        .info p { font-size: 0.95rem; color: #ccc; margin-bottom: 8px; }
 
-        .area-botoes { margin-top: 25px; display: flex; gap: 10px; }
-        .btn { flex: 1; padding: 15px; text-align: center; font-weight: 700; border-radius: 8px; font-size: 0.8rem; text-transform: uppercase; }
+        .area-botoes { margin-top: 25px; display: flex; gap: 12px; }
+        .btn { flex: 1; padding: 16px; text-align: center; font-weight: 700; border-radius: 8px; font-size: 0.85rem; text-transform: uppercase; }
         .btn-matricula { background-color: var(--laranja) !important; }
         .btn-mapa { background-color: var(--cinza-botao) !important; border: 1px solid #444; }
 
-        /* AJUSTE DO MENU SUSPENSO DISCRETO */
+        /* RODAPÉ E DROPDOWN DAS REDES SOCIAIS - DISCRETO E MENOR */
         .footer-social {
             text-align: center;
-            padding: 50px 20px;
+            padding: 40px 20px;
             background-color: #080808;
             border-top: 1px solid #222;
         }
@@ -73,55 +100,52 @@
 
         .dropbtn-footer {
             background-color: transparent;
-            border: 2px solid #444;
-            color: #fff;
-            padding: 18px 40px; /* Aumentado para melhor proporção */
-            font-size: 1rem;
-            font-weight: 700;
-            font-family: 'Oswald', sans-serif;
+            border: 1px solid #333; /* Mais fino para ser discreto */
+            color: #888;
+            padding: 10px 20px; 
+            font-size: 0.8rem;
+            font-weight: 400;
             cursor: pointer;
-            border-radius: 50px;
+            border-radius: 4px;
             transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 12px;
             text-transform: uppercase;
         }
 
-        .dropbtn-footer:hover { border-color: var(--laranja); color: var(--laranja); }
+        .dropbtn-footer:hover { border-color: var(--laranja); color: white; }
 
         .dropdown-content-footer {
             display: none;
             position: absolute;
-            bottom: 75px; /* Ajuste para não colar no botão */
+            bottom: 45px;
             left: 50%;
             transform: translateX(-50%);
             background-color: #1a1a1a;
-            min-width: 280px; /* Menu mais largo e proporcional */
-            box-shadow: 0px 10px 30px rgba(0,0,0,0.9);
-            border: 1px solid #444;
-            border-radius: 12px;
+            min-width: 180px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.8);
+            border: 1px solid #333;
+            border-radius: 4px;
             z-index: 1000;
-            overflow: hidden;
         }
 
         .dropdown-content-footer a {
             color: white;
-            padding: 20px 25px; /* Botões das cidades bem maiores e confortáveis */
+            padding: 12px 15px;
             display: block;
-            font-size: 1.1rem; /* Texto maior */
-            font-weight: 600;
+            font-size: 0.8rem;
             border-bottom: 1px solid #222;
-            text-align: center;
-            transition: 0.2s;
+            text-align: left;
         }
 
         .dropdown-content-footer a:hover { background-color: var(--laranja); }
         .dropdown-footer:hover .dropdown-content-footer { display: block; }
 
-        footer { text-align: center; padding: 25px; color: #444; font-size: 0.75rem; background-color: #050505; }
+        footer { text-align: center; padding: 20px; color: #444; font-size: 0.7rem; }
 
-        @media (max-width: 480px) { .area-botoes { flex-direction: column; } .dropdown-content-footer { min-width: 90vw; } }
+        @media (max-width: 480px) { 
+            nav { gap: 20px; padding: 15px 10px; }
+            .nav-link { font-size: 0.9rem; }
+            .area-botoes { flex-direction: column; } 
+        }
     </style>
 </head>
 <body>
@@ -129,9 +153,9 @@
     <header><div class="logo"><h1>GUARAFIT</h1></div></header>
 
     <nav>
-        <a href="#guara" class="nav-link">GUARÁ</a>
+        <a href="#guara" class="nav-link">GUARATINGUETÁ</a>
         <a href="#lorena" class="nav-link">LORENA</a>
-        <a href="#cachoeira" class="nav-link">CACHOEIRA</a>
+        <a href="#cachoeira" class="nav-link">CACHOEIRA PAULISTA</a>
         <a href="#cruzeiro" class="nav-link">CRUZEIRO</a>
     </nav>
 
@@ -203,11 +227,11 @@
                 <i class="fab fa-instagram"></i> SIGA-NOS NAS REDES SOCIAIS
             </button>
             <div class="dropdown-content-footer">
-                <a href="https://www.instagram.com/guarafitacademias/" target="_blank">VILA GUARA</a>
-                <a href="https://www.instagram.com/guarafitacademias/" target="_blank">PEDREGULHO</a>
-                <a href="https://www.instagram.com/guarafitlorena/" target="_blank">LORENA</a>
-                <a href="https://www.instagram.com/guarafitacademias/" target="_blank">CACHOEIRA</a>
-                <a href="https://www.instagram.com/guarafitcruzeiro/" target="_blank">CRUZEIRO</a>
+                <a href="https://www.instagram.com/guarafitacademias/" target="_blank">Vila Guara</a>
+                <a href="https://www.instagram.com/guarafitacademias/" target="_blank">Pedregulho</a>
+                <a href="https://www.instagram.com/guarafitlorena/" target="_blank">Lorena</a>
+                <a href="https://www.instagram.com/guarafitacademias/" target="_blank">Cachoeira Paulista</a>
+                <a href="https://www.instagram.com/guarafitcruzeiro/" target="_blank">Cruzeiro</a>
             </div>
         </div>
     </div>
