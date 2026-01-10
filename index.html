@@ -48,7 +48,7 @@
             background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200');
             background-size: cover;
             background-position: center;
-            height: 30vh;
+            height: 25vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -77,10 +77,10 @@
         .btn-matricula { background-color: var(--laranja) !important; }
         .btn-mapa { background-color: var(--cinza-botao) !important; border: 1px solid #444; }
 
-        /* RODAPÉ DISCRETO COM MENU SUSPENSO */
+        /* RODAPÉ E DROPDOWN AJUSTADO */
         .footer-social {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
             background-color: #080808;
             border-top: 1px solid #222;
         }
@@ -91,14 +91,20 @@
         }
 
         .dropbtn-footer {
-            background: none;
-            border: 1px solid #333;
+            background-color: transparent;
+            border: 2px solid #444;
             color: #fff;
-            padding: 10px 20px;
+            padding: 15px 30px;
             font-size: 0.9rem;
+            font-weight: 700;
+            font-family: 'Oswald', sans-serif;
             cursor: pointer;
             border-radius: 50px;
             transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-transform: uppercase;
         }
 
         .dropbtn-footer:hover { border-color: var(--laranja); color: var(--laranja); }
@@ -106,30 +112,33 @@
         .dropdown-content-footer {
             display: none;
             position: absolute;
-            bottom: 50px; /* Faz o menu abrir para cima */
+            bottom: 70px;
             left: 50%;
             transform: translateX(-50%);
             background-color: #1a1a1a;
-            min-width: 200px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.8);
+            min-width: 260px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.9);
             border: 1px solid #333;
-            border-radius: 10px;
-            z-index: 10;
+            border-radius: 12px;
+            z-index: 1000;
+            overflow: hidden;
         }
 
         .dropdown-content-footer a {
             color: white;
-            padding: 12px 16px;
+            padding: 18px 20px;
             display: block;
-            font-size: 0.8rem;
+            font-size: 0.95rem;
+            font-weight: 600;
             border-bottom: 1px solid #222;
-            text-align: left;
+            text-align: center;
         }
 
         .dropdown-content-footer a:hover { background-color: var(--laranja); }
+
         .dropdown-footer:hover .dropdown-content-footer { display: block; }
 
-        footer { text-align: center; padding: 20px; color: #444; font-size: 0.75rem; }
+        footer { text-align: center; padding: 25px; color: #444; font-size: 0.75rem; background-color: #050505; }
 
         @media (max-width: 480px) { .area-botoes { flex-direction: column; } }
     </style>
@@ -217,7 +226,7 @@
     <div class="footer-social">
         <div class="dropdown-footer">
             <button class="dropbtn-footer">
-                <i class="fab fa-instagram"></i> NOSSOS INSTAGRAMS
+                <i class="fab fa-instagram"></i> SIGA-NOS NAS REDES SOCIAIS
             </button>
             <div class="dropdown-content-footer">
                 <a href="https://www.instagram.com/guarafitacademias/" target="_blank">VILA GUARA</a>
