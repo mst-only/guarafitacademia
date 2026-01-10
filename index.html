@@ -23,7 +23,7 @@
         header { background-color: var(--preto); padding: 30px 10px; text-align: center; }
         .logo h1 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 2.8rem; margin: 0; letter-spacing: 4px; }
 
-        /* MENU OPÇÃO 3: AJUSTADO (MAIOR E MAIS VISÍVEL) */
+        /* MENU AJUSTADO (SEM BRILHO) */
         nav {
             background-color: rgba(0,0,0,0.98);
             padding: 15px 0;
@@ -43,7 +43,7 @@
 
         .nav-link { 
             font-family: 'Oswald', sans-serif; 
-            font-size: 1rem; /* Aumentado */
+            font-size: 1rem; 
             text-transform: uppercase; 
             letter-spacing: 1.5px;
             color: #666 !important;
@@ -53,28 +53,27 @@
             gap: 8px;
             transition: 0.3s all ease-in-out;
             padding: 10px 15px;
-            flex: 1; /* Distribui o espaço igualmente */
+            flex: 1;
             max-width: 180px;
         }
 
         .nav-link i { 
-            font-size: 1.8rem; /* Ícone bem maior */
+            font-size: 1.8rem; 
             transition: 0.3s; 
         }
 
-        /* Estilo quando a seção está ativa */
+        /* ESTADO ATIVO - LIMPO E SÓLIDO */
         .nav-link.active {
             color: var(--laranja) !important;
-            background: rgba(255, 102, 0, 0.05); /* Fundo sutil */
+            background: rgba(255, 102, 0, 0.05);
             border-radius: 12px;
         }
 
         .nav-link.active i { 
-            transform: scale(1.2) rotate(-10deg); 
-            filter: drop-shadow(0 0 8px var(--laranja)); /* Brilho no peso */
+            transform: scale(1.15) rotate(-5deg);
         }
 
-        /* CONTEÚDO DOS CARDS */
+        /* CARDS E CONTEÚDO */
         .container { padding: 40px 20px; max-width: 650px; margin: 0 auto; }
 
         .unidade {
@@ -84,7 +83,6 @@
             overflow: hidden;
             border: 1px solid #222;
             scroll-margin-top: 140px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .unidade-foto-container { width: 100%; height: 260px; }
@@ -93,16 +91,14 @@
         .unidade-content { padding: 35px; }
         .unidade h2 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 1.8rem; text-transform: uppercase; margin: 0 0 15px 0; }
         
-        .unidade-info { margin-bottom: 25px; }
         .unidade-info p { font-size: 0.95rem; color: #ccc; margin: 8px 0; display: flex; align-items: flex-start; gap: 12px; }
         .unidade-info i { color: var(--laranja); margin-top: 4px; font-size: 1rem; }
 
         .area-botoes { display: flex; gap: 15px; margin-top: 25px; }
-        .btn { flex: 1; padding: 18px; text-align: center; font-weight: 700; border-radius: 12px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+        .btn { flex: 1; padding: 18px; text-align: center; font-weight: 700; border-radius: 12px; font-size: 0.85rem; text-transform: uppercase; }
         .btn-matricula { background-color: var(--laranja) !important; }
         .btn-mapa { background-color: var(--cinza-botao) !important; border: 1px solid #444; }
 
-        /* FOOTER REDES SOCIAIS */
         .footer-social { text-align: center; padding: 60px 20px; background-color: #080808; border-top: 1px solid #222; }
         .dropbtn-footer {
             background: none; border: 1px solid #444; color: #888; padding: 15px 30px; 
@@ -118,7 +114,6 @@
 
         footer { text-align: center; padding: 40px; color: #444; font-size: 0.75rem; }
 
-        /* AJUSTE PARA CELULAR */
         @media (max-width: 480px) {
             .nav-container { gap: 5px; padding: 0 5px; }
             .nav-link { font-size: 0.7rem; padding: 10px 5px; max-width: none; }
