@@ -4,8 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guarafit Academias</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS EMBUTIDO PARA GARANTIR QUE FUNCIONE */
+        :root {
+            --laranja: #FF6600;
+            --preto: #000000;
+            --cinza-card: #121212;
+            --cinza-botao: #333333;
+            --branco: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none !important;
+        }
+
+        body {
+            background-color: var(--preto);
+            color: var(--branco);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        header {
+            background-color: var(--preto);
+            padding: 30px 10px;
+            text-align: center;
+            border-bottom: 3px solid var(--laranja);
+        }
+
+        .logo h1 {
+            font-family: 'Oswald', sans-serif;
+            color: var(--laranja);
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .unidade {
+            background-color: var(--cinza-card);
+            margin-bottom: 30px;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 6px solid var(--laranja);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .unidade h2 {
+            font-family: 'Oswald', sans-serif;
+            color: var(--laranja);
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+        }
+
+        .info p {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+
+        .area-botoes {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        /* FORÇANDO AS CORES DOS BOTÕES */
+        .btn-laranja {
+            flex: 1;
+            background-color: var(--laranja) !important;
+            color: white !important;
+            padding: 12px 5px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .btn-cinza {
+            flex: 1;
+            background-color: var(--cinza-botao) !important;
+            color: white !important;
+            padding: 12px 5px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            border-radius: 6px;
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #444;
+        }
+    </style>
 </head>
 <body>
 
@@ -18,62 +121,38 @@
     <main class="container">
         
         <section class="unidade">
-            <div class="unidade-info">
-                <h2>Guaratinguetá - Centro</h2>
+            <h2>Guaratinguetá - Centro</h2>
+            <div class="info">
                 <p>📍 Rua Exemplo, 100 - Centro</p>
                 <p>⏰ Seg a Sex: 06h às 22h | Sáb: 08h às 12h</p>
             </div>
             <div class="area-botoes">
                 <a href="https://wa.me/5512999999999" class="btn-laranja">MATRICULE-SE</a>
-                <a href="https://www.google.com/maps" target="_blank" class="btn-cinza">COMO CHEGAR</a>
+                <a href="#" class="btn-cinza">COMO CHEGAR</a>
             </div>
         </section>
 
         <section class="unidade">
-            <div class="unidade-info">
-                <h2>Guaratinguetá - Beira Rio</h2>
+            <h2>Guaratinguetá - Beira Rio</h2>
+            <div class="info">
                 <p>📍 Av. Beira Rio, 500</p>
                 <p>⏰ Seg a Sex: 06h às 22h</p>
             </div>
             <div class="area-botoes">
                 <a href="https://wa.me/5512999999999" class="btn-laranja">MATRICULE-SE</a>
-                <a href="https://www.google.com/maps" target="_blank" class="btn-cinza">COMO CHEGAR</a>
+                <a href="#" class="btn-cinza">COMO CHEGAR</a>
             </div>
         </section>
 
         <section class="unidade">
-            <div class="unidade-info">
-                <h2>Unidade Lorena</h2>
+            <h2>Unidade Lorena</h2>
+            <div class="info">
                 <p>📍 Endereço de Lorena, 123</p>
                 <p>⏰ Unidade 24 Horas</p>
             </div>
             <div class="area-botoes">
                 <a href="https://wa.me/5512999999999" class="btn-laranja">MATRICULE-SE</a>
-                <a href="https://www.google.com/maps" target="_blank" class="btn-cinza">COMO CHEGAR</a>
-            </div>
-        </section>
-
-        <section class="unidade">
-            <div class="unidade-info">
-                <h2>Unidade Cruzeiro</h2>
-                <p>📍 Rua Principal, 99</p>
-                <p>⏰ Seg a Sex: 06h às 22h</p>
-            </div>
-            <div class="area-botoes">
-                <a href="https://wa.me/5512999999999" class="btn-laranja">MATRICULE-SE</a>
-                <a href="https://www.google.com/maps" target="_blank" class="btn-cinza">COMO CHEGAR</a>
-            </div>
-        </section>
-
-        <section class="unidade">
-            <div class="unidade-info">
-                <h2>Cachoeira Paulista</h2>
-                <p>📍 Centro, Próximo à Igreja</p>
-                <p>⏰ Seg a Sex: 06h às 21h</p>
-            </div>
-            <div class="area-botoes">
-                <a href="https://wa.me/5512999999999" class="btn-laranja">MATRICULE-SE</a>
-                <a href="https://www.google.com/maps" target="_blank" class="btn-cinza">COMO CHEGAR</a>
+                <a href="#" class="btn-cinza">COMO CHEGAR</a>
             </div>
         </section>
 
