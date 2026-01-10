@@ -23,7 +23,7 @@
         header { background-color: var(--preto); padding: 30px 10px; text-align: center; }
         .logo h1 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 2.8rem; margin: 0; letter-spacing: 4px; }
 
-        /* MENU AJUSTADO (SEM BRILHO) */
+        /* MENU INTELIGENTE */
         nav {
             background-color: rgba(0,0,0,0.98);
             padding: 15px 0;
@@ -33,47 +33,85 @@
             border-bottom: 2px solid #222;
         }
 
-        .nav-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
+        .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: center; gap: 20px; }
 
         .nav-link { 
-            font-family: 'Oswald', sans-serif; 
-            font-size: 1rem; 
-            text-transform: uppercase; 
-            letter-spacing: 1.5px;
-            color: #666 !important;
+            font-family: 'Oswald', sans-serif; font-size: 1rem; text-transform: uppercase; letter-spacing: 1.5px;
+            color: #666 !important; display: flex; flex-direction: column; align-items: center;
+            gap: 8px; transition: 0.3s all ease-in-out; padding: 10px 15px; flex: 1; max-width: 180px;
+        }
+
+        .nav-link i { font-size: 1.8rem; transition: 0.3s; }
+        .nav-link.active { color: var(--laranja) !important; background: rgba(255, 102, 0, 0.05); border-radius: 12px; }
+        .nav-link.active i { transform: scale(1.15) rotate(-5deg); }
+
+        /* NOVO ESTILO: CARROSSEL DE FOTOS */
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .carousel-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            height: 100%;
+        }
+
+        /* Esconde a barra de rolagem */
+        .carousel-container::-webkit-scrollbar { display: none; }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            scroll-snap-align: start;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Setas do Carrossel (Visíveis apenas em telas maiores) */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 15px 10px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 5px;
+        }
+        .btn-prev { left: 10px; }
+        .btn-next { right: 10px; }
+
+        /* Pontinhos indicadores */
+        .carousel-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
             gap: 8px;
-            transition: 0.3s all ease-in-out;
-            padding: 10px 15px;
-            flex: 1;
-            max-width: 180px;
         }
-
-        .nav-link i { 
-            font-size: 1.8rem; 
-            transition: 0.3s; 
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
         }
+        .dot.active { background: var(--laranja); width: 20px; border-radius: 10px; transition: 0.3s; }
 
-        /* ESTADO ATIVO - LIMPO E SÓLIDO */
-        .nav-link.active {
-            color: var(--laranja) !important;
-            background: rgba(255, 102, 0, 0.05);
-            border-radius: 12px;
-        }
-
-        .nav-link.active i { 
-            transform: scale(1.15) rotate(-5deg);
-        }
-
-        /* CARDS E CONTEÚDO */
+        /* CONTEÚDO DOS CARDS */
         .container { padding: 40px 20px; max-width: 650px; margin: 0 auto; }
 
         .unidade {
@@ -85,9 +123,6 @@
             scroll-margin-top: 140px;
         }
 
-        .unidade-foto-container { width: 100%; height: 260px; }
-        .unidade-foto-container img { width: 100%; height: 100%; object-fit: cover; }
-        
         .unidade-content { padding: 35px; }
         .unidade h2 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 1.8rem; text-transform: uppercase; margin: 0 0 15px 0; }
         
@@ -119,7 +154,7 @@
             .nav-link { font-size: 0.7rem; padding: 10px 5px; max-width: none; }
             .nav-link i { font-size: 1.4rem; }
             .area-botoes { flex-direction: column; }
-            .logo h1 { font-size: 2.2rem; }
+            .carousel-btn { display: none; } /* Mobile usa o dedo para deslizar */
         }
     </style>
 </head>
@@ -138,7 +173,18 @@
 
     <main class="container">
         <section id="un-guara" class="unidade">
-            <div class="unidade-foto-container"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800"></div>
+            <div class="carousel-wrapper">
+                <div class="carousel-container" id="carousel-guara">
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800"></div>
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800"></div>
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800"></div>
+                </div>
+                <div class="carousel-dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
             <div class="unidade-content">
                 <h2>Guaratinguetá - Vila Guara</h2>
                 <div class="unidade-info">
@@ -153,7 +199,16 @@
         </section>
 
         <section id="un-lorena" class="unidade">
-            <div class="unidade-foto-container"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800"></div>
+            <div class="carousel-wrapper">
+                <div class="carousel-container">
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800"></div>
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=800"></div>
+                </div>
+                <div class="carousel-dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
             <div class="unidade-content">
                 <h2>Lorena - Centro</h2>
                 <div class="unidade-info">
@@ -168,7 +223,16 @@
         </section>
 
         <section id="un-cachoeira" class="unidade">
-            <div class="unidade-foto-container"><img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=800"></div>
+            <div class="carousel-wrapper">
+                <div class="carousel-container">
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=800"></div>
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800"></div>
+                </div>
+                <div class="carousel-dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
             <div class="unidade-content">
                 <h2>Cachoeira Paulista</h2>
                 <div class="unidade-info">
@@ -183,7 +247,16 @@
         </section>
 
         <section id="un-cruzeiro" class="unidade">
-            <div class="unidade-foto-container"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800"></div>
+            <div class="carousel-wrapper">
+                <div class="carousel-container">
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800"></div>
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800"></div>
+                </div>
+                <div class="carousel-dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
             <div class="unidade-content">
                 <h2>Cruzeiro - Centro</h2>
                 <div class="unidade-info">
@@ -213,6 +286,7 @@
     <footer><p>© 2024 Guarafit Academias</p></footer>
 
     <script>
+        // LÓGICA DO MENU SCROLLSPY
         const sections = document.querySelectorAll(".unidade");
         const navLinks = document.querySelectorAll(".nav-link");
 
@@ -230,6 +304,20 @@
                 if (link.getAttribute("href").includes(current)) {
                     link.classList.add("active");
                 }
+            });
+        });
+
+        // LÓGICA DOS PONTINHOS DO CARROSSEL
+        const carousels = document.querySelectorAll('.carousel-container');
+        carousels.forEach(carousel => {
+            carousel.addEventListener('scroll', () => {
+                const width = carousel.offsetWidth;
+                const scrollLeft = carousel.scrollLeft;
+                const index = Math.round(scrollLeft / width);
+                const dots = carousel.parentElement.querySelectorAll('.dot');
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
             });
         });
     </script>
