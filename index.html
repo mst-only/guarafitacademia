@@ -26,20 +26,20 @@
             overflow-x: hidden;
         }
         
-        /* HEADER - LOGO CENTRALIZADO E AMPLIADO */
+        /* HEADER - LOGO CENTRALIZADO */
         header { 
             background-color: var(--preto); 
-            padding: 45px 0; /* Mais espaço para o logo respirar */
+            padding: 45px 0 20px 0; /* Ajuste para aproximar um pouco do menu */
             text-align: center;
-            border-bottom: 2px solid #1a1a1a;
             display: flex;
             justify-content: center;
             align-items: center;
+            /* LINHA REMOVIDA DAQUI */
         }
 
         .logo-box {
             display: block;
-            width: 320px; /* Tamanho maior para visibilidade */
+            width: 320px; 
             max-width: 85%;
             transition: transform 0.3s ease;
         }
@@ -48,17 +48,17 @@
             width: 100%;
             height: auto;
             display: block;
-            image-rendering: -webkit-optimize-contrast; /* Melhora nitidez */
+            image-rendering: -webkit-optimize-contrast;
         }
 
         /* MENU INTELIGENTE (SCROLLSPY) */
         nav {
-            background-color: rgba(0,0,0,0.95);
+            background-color: var(--preto); /* Fundo sólido preto */
             padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #222;
+            /* LINHA REMOVIDA DAQUI */
         }
         .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: center; gap: 10px; }
         .nav-link { 
@@ -92,7 +92,7 @@
         .unidade {
             background-color: var(--cinza-card); margin-bottom: 60px;
             border-radius: 20px; overflow: hidden; border: 1px solid #222;
-            scroll-margin-top: 120px;
+            scroll-margin-top: 100px;
         }
         .unidade-content { padding: 30px; }
         .unidade h2 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 1.8rem; margin: 0 0 15px 0; }
@@ -117,7 +117,7 @@
 
         @media (max-width: 480px) {
             .logo-box { width: 240px; }
-            header { padding: 35px 0; }
+            header { padding: 35px 0 10px 0; }
             .nav-link { font-size: 0.6rem; }
             .area-botoes { flex-direction: column; }
         }
@@ -157,7 +157,7 @@
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
-                    <a href="https://maps.google.com" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Guaratingueta" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
                 </div>
             </div>
         </section>
@@ -178,7 +178,7 @@
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512981285014" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
-                    <a href="https://maps.google.com" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Lorena" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
                 </div>
             </div>
         </section>
@@ -198,7 +198,7 @@
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982572400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
-                    <a href="https://maps.google.com" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Cachoeira+Paulista" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
                 </div>
             </div>
         </section>
@@ -218,7 +218,7 @@
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982452400" target="_blank" class="btn btn-matricula">MATRICULE-SE</a>
-                    <a href="https://maps.google.com" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Cruzeiro" target="_blank" class="btn btn-mapa">VER NO MAPA</a>
                 </div>
             </div>
         </section>
@@ -233,14 +233,13 @@
     <footer><p>© 2026 Guarafit Academias</p></footer>
 
     <script>
-        // SCROLLSPY - MARCA O MENU CONFORME ROLA A TELA
         const sections = document.querySelectorAll(".unidade");
         const navLinks = document.querySelectorAll(".nav-link");
         window.addEventListener("scroll", () => {
             let current = "";
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                if (window.pageYOffset >= sectionTop - 200) { current = section.getAttribute("id"); }
+                if (window.pageYOffset >= sectionTop - 150) { current = section.getAttribute("id"); }
             });
             navLinks.forEach(link => {
                 link.classList.remove("active");
@@ -248,7 +247,6 @@
             });
         });
 
-        // CARROSSEL - ATUALIZA OS PONTINHOS
         const carousels = document.querySelectorAll('.carousel-container');
         carousels.forEach(carousel => {
             carousel.addEventListener('scroll', () => {
