@@ -8,6 +8,8 @@
     
     <style>
         /* RESET E CONFIGURAÇÕES GERAIS */
+        html { scroll-behavior: smooth; } /* Faz o deslize ser suave */
+        
         a, a:visited, a:active, a:hover {
             text-decoration: none !important;
             color: white !important;
@@ -25,29 +27,58 @@
             color: #ffffff;
             font-family: 'Poppins', sans-serif;
             margin: 0;
-            padding-bottom: 50px; /* Garante espaço no final da página */
         }
 
         header {
             background-color: var(--preto);
-            padding: 30px 10px;
+            padding: 20px 10px;
             text-align: center;
-            border-bottom: 3px solid var(--laranja);
+            border-bottom: 2px solid var(--laranja);
         }
 
         .logo h1 {
             font-family: 'Oswald', sans-serif;
             color: var(--laranja);
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin: 0;
             letter-spacing: 2px;
         }
 
+        /* MENU DE NAVEGAÇÃO RÁPIDA */
+        nav {
+            background-color: #080808;
+            padding: 10px 0;
+            position: sticky; /* Fica preso no topo ao rolar */
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #222;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            overflow-x: auto; /* Permite rolar o menu no celular */
+        }
+
+        .nav-link {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            border-color: var(--laranja);
+            color: var(--laranja) !important;
+        }
+
+        /* HERO SECTION */
         .hero {
             background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200');
             background-size: cover;
             background-position: center;
-            height: 40vh;
+            height: 35vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -63,47 +94,30 @@
         }
 
         .hero-content { position: relative; z-index: 1; }
-
-        .hero h2 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.5rem;
-            text-transform: uppercase;
-        }
-
+        .hero h2 { font-family: 'Oswald', sans-serif; font-size: 2.2rem; text-transform: uppercase; }
         .laranja-txt { color: var(--laranja); }
 
         .container {
-            padding: 40px 20px;
+            padding: 30px 20px;
             max-width: 600px;
             margin: 0 auto;
         }
 
+        /* CARDS DAS UNIDADES */
         .unidade {
             background-color: var(--cinza-card);
-            margin-bottom: 40px;
+            margin-bottom: 50px; /* Mais espaço entre as unidades */
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             border: 1px solid #222;
+            scroll-margin-top: 80px; /* Evita que o menu cubra o título ao pular */
         }
 
-        .unidade-foto-container {
-            width: 100%;
-            height: 220px;
-            background-color: #1a1a1a; /* Cor de fundo caso a imagem falhe */
-        }
+        .unidade-foto-container { width: 100%; height: 220px; }
+        .unidade-foto-container img { width: 100%; height: 100%; object-fit: cover; }
 
-        .unidade-foto-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .unidade-content {
-            padding: 25px;
-        }
-
+        .unidade-content { padding: 25px; }
         .unidade h2 {
             font-family: 'Oswald', sans-serif;
             color: var(--laranja);
@@ -112,25 +126,13 @@
             text-transform: uppercase;
         }
 
-        .info p {
-            font-size: 0.9rem;
-            color: #ccc;
-            margin-bottom: 8px;
-        }
+        .info p { font-size: 0.9rem; color: #ccc; margin-bottom: 8px; }
 
-        .area-botoes {
-            margin-top: 20px;
-            display: flex;
-            gap: 10px;
-        }
+        .area-botoes { margin-top: 20px; display: flex; gap: 10px; }
 
         .btn-matricula, .btn-mapa {
-            flex: 1;
-            padding: 15px 5px;
-            text-align: center;
-            font-weight: 700;
-            border-radius: 8px;
-            font-size: 0.8rem;
+            flex: 1; padding: 15px 5px; text-align: center;
+            font-weight: 700; border-radius: 8px; font-size: 0.8rem;
         }
 
         .btn-matricula { background-color: var(--laranja) !important; }
@@ -155,6 +157,13 @@
         <div class="logo"><h1>GUARAFIT</h1></div>
     </header>
 
+    <nav>
+        <a href="#guara" class="nav-link">GUARATINGUETÁ</a>
+        <a href="#lorena" class="nav-link">LORENA</a>
+        <a href="#cachoeira" class="nav-link">CACHOEIRA</a>
+        <a href="#cruzeiro" class="nav-link">CRUZEIRO</a>
+    </nav>
+
     <section class="hero">
         <div class="hero-content">
             <h2>TREINE <span class="laranja-txt">FORTE</span>, VIVA <span class="laranja-txt">MELHOR</span></h2>
@@ -163,6 +172,7 @@
 
     <main class="container">
         
+        <div id="guara"></div>
         <section class="unidade">
             <div class="unidade-foto-container">
                 <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800" alt="Vila Guara">
@@ -197,7 +207,7 @@
             </div>
         </section>
 
-        <section class="unidade">
+        <section id="lorena" class="unidade">
             <div class="unidade-foto-container">
                 <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800" alt="Lorena">
             </div>
@@ -214,7 +224,7 @@
             </div>
         </section>
 
-        <section class="unidade">
+        <section id="cachoeira" class="unidade">
             <div class="unidade-foto-container">
                 <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=800" alt="Cachoeira">
             </div>
@@ -231,7 +241,7 @@
             </div>
         </section>
 
-        <section class="unidade">
+        <section id="cruzeiro" class="unidade">
             <div class="unidade-foto-container">
                 <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800" alt="Cruzeiro">
             </div>
@@ -251,7 +261,7 @@
     </main>
 
     <footer>
-        <p>© 2024 Guarafit Academias • Unidades em toda a região</p>
+        <p>© 2024 Guarafit Academias • Selecione sua unidade acima</p>
     </footer>
 
 </body>
