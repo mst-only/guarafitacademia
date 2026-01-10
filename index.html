@@ -7,26 +7,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS EMBUTIDO PARA GARANTIR QUE FUNCIONE */
+        /* 1. LIMPEZA TOTAL DE LINKS */
+        a, a:visited, a:active, a:hover {
+            text-decoration: none !important;
+            color: white !important; /* Força o texto a ser branco sempre */
+        }
+
         :root {
             --laranja: #FF6600;
             --preto: #000000;
             --cinza-card: #121212;
             --cinza-botao: #333333;
-            --branco: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            text-decoration: none !important;
         }
 
         body {
             background-color: var(--preto);
-            color: var(--branco);
+            color: #ffffff;
             font-family: 'Poppins', sans-serif;
+            margin: 0;
         }
 
         header {
@@ -40,7 +38,7 @@
             font-family: 'Oswald', sans-serif;
             color: var(--laranja);
             font-size: 2.5rem;
-            letter-spacing: 2px;
+            margin: 0;
         }
 
         .container {
@@ -51,61 +49,55 @@
 
         .unidade {
             background-color: var(--cinza-card);
-            margin-bottom: 30px;
-            padding: 25px;
+            margin-bottom: 25px;
+            padding: 20px;
             border-radius: 12px;
-            border-left: 6px solid var(--laranja);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border-left: 5px solid var(--laranja);
         }
 
         .unidade h2 {
             font-family: 'Oswald', sans-serif;
             color: var(--laranja);
-            margin-bottom: 15px;
-            font-size: 1.6rem;
-            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
         }
 
         .info p {
-            margin-bottom: 8px;
             font-size: 0.9rem;
-            color: #e0e0e0;
+            color: #ccc;
+            margin-bottom: 5px;
         }
 
+        /* 2. ESTILO DOS BOTÕES REFORMULADO */
         .area-botoes {
             margin-top: 20px;
             display: flex;
             gap: 10px;
         }
 
-        /* FORÇANDO AS CORES DOS BOTÕES */
-        .btn-laranja {
+        .btn-matricula {
             flex: 1;
-            background-color: var(--laranja) !important;
-            color: white !important;
-            padding: 12px 5px;
+            background-color: #FF6600 !important; /* Laranja direto no código */
+            padding: 15px 5px;
             text-align: center;
-            font-weight: 700;
-            font-size: 0.8rem;
-            border-radius: 6px;
+            font-weight: bold;
+            border-radius: 8px;
             display: block;
         }
 
-        .btn-cinza {
+        .btn-mapa {
             flex: 1;
-            background-color: var(--cinza-botao) !important;
-            color: white !important;
-            padding: 12px 5px;
+            background-color: #333333 !important; /* Cinza direto no código */
+            padding: 15px 5px;
             text-align: center;
-            font-weight: 700;
-            font-size: 0.8rem;
-            border-radius: 6px;
+            font-weight: bold;
+            border-radius: 8px;
             display: block;
         }
 
         footer {
             text-align: center;
-            padding: 40px;
+            padding: 20px;
             color: #444;
         }
     </style>
@@ -127,8 +119,8 @@
                 <p>⏰ Seg a Sex: 06h às 22h | Sáb: 08h às 12h</p>
             </div>
             <div class="area-botoes">
-                <a href="https://wa.me/5512999999999" class="btn-laranja">MATRICULE-SE</a>
-                <a href="#" class="btn-cinza">COMO CHEGAR</a>
+                <a href="https://wa.me/5512999999999" class="btn-matricula">MATRICULE-SE</a>
+                <a href="https://maps.google.com" target="_blank" class="btn-mapa">COMO CHEGAR</a>
             </div>
         </section>
 
@@ -139,20 +131,8 @@
                 <p>⏰ Seg a Sex: 06h às 22h</p>
             </div>
             <div class="area-botoes">
-                <a href="https://wa.me/5512999999999" class="btn-laranja">MATRICULE-SE</a>
-                <a href="#" class="btn-cinza">COMO CHEGAR</a>
-            </div>
-        </section>
-
-        <section class="unidade">
-            <h2>Unidade Lorena</h2>
-            <div class="info">
-                <p>📍 Endereço de Lorena, 123</p>
-                <p>⏰ Unidade 24 Horas</p>
-            </div>
-            <div class="area-botoes">
-                <a href="https://wa.me/5512999999999" class="btn-laranja">MATRICULE-SE</a>
-                <a href="#" class="btn-cinza">COMO CHEGAR</a>
+                <a href="https://wa.me/5512999999999" class="btn-matricula">MATRICULE-SE</a>
+                <a href="https://maps.google.com" target="_blank" class="btn-mapa">COMO CHEGAR</a>
             </div>
         </section>
 
