@@ -25,6 +25,7 @@
             color: #ffffff;
             font-family: 'Poppins', sans-serif;
             margin: 0;
+            padding-bottom: 50px; /* Garante espaço no final da página */
         }
 
         header {
@@ -42,18 +43,16 @@
             letter-spacing: 2px;
         }
 
-        /* HERO SECTION */
         .hero {
-            background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200&auto=format&fit=crop');
+            background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200');
             background-size: cover;
             background-position: center;
-            height: 45vh;
+            height: 40vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             position: relative;
-            margin-bottom: 40px;
         }
 
         .hero::before {
@@ -63,21 +62,18 @@
             background: rgba(0, 0, 0, 0.6);
         }
 
-        .hero-content { position: relative; z-index: 1; padding: 20px; }
+        .hero-content { position: relative; z-index: 1; }
 
         .hero h2 {
             font-family: 'Oswald', sans-serif;
-            font-size: 2.8rem;
-            color: white;
-            margin-bottom: 10px;
+            font-size: 2.5rem;
             text-transform: uppercase;
         }
 
         .laranja-txt { color: var(--laranja); }
 
-        /* CONTAINER DOS CARDS */
         .container {
-            padding: 20px;
+            padding: 40px 20px;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -94,18 +90,14 @@
         .unidade-foto-container {
             width: 100%;
             height: 220px;
-            overflow: hidden;
+            background-color: #1a1a1a; /* Cor de fundo caso a imagem falhe */
         }
 
         .unidade-foto-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .unidade:hover .unidade-foto-container img {
-            transform: scale(1.1);
+            display: block;
         }
 
         .unidade-content {
@@ -115,22 +107,21 @@
         .unidade h2 {
             font-family: 'Oswald', sans-serif;
             color: var(--laranja);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-size: 1.6rem;
             text-transform: uppercase;
         }
 
         .info p {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #ccc;
-            margin-bottom: 10px;
-            line-height: 1.5;
+            margin-bottom: 8px;
         }
 
         .area-botoes {
-            margin-top: 25px;
+            margin-top: 20px;
             display: flex;
-            gap: 12px;
+            gap: 10px;
         }
 
         .btn-matricula, .btn-mapa {
@@ -140,28 +131,20 @@
             font-weight: 700;
             border-radius: 8px;
             font-size: 0.8rem;
-            text-transform: uppercase;
-            transition: 0.3s;
         }
 
         .btn-matricula { background-color: var(--laranja) !important; }
         .btn-mapa { background-color: var(--cinza-botao) !important; }
 
-        .btn-matricula:hover, .btn-mapa:hover {
-            filter: brightness(1.2);
-            transform: translateY(-3px);
-        }
-
         footer {
             text-align: center;
-            padding: 60px 20px;
-            color: #555;
+            padding: 50px 20px;
+            color: #444;
             font-size: 0.8rem;
-            background-color: #080808;
+            border-top: 1px solid #111;
         }
 
         @media (max-width: 480px) {
-            .hero h2 { font-size: 2rem; }
             .area-botoes { flex-direction: column; }
         }
     </style>
@@ -169,14 +152,12 @@
 <body>
 
     <header>
-        <div class="logo">
-            <h1>GUARAFIT</h1>
-        </div>
+        <div class="logo"><h1>GUARAFIT</h1></div>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <h2>TREINE <span class="laranja-txt">FORTE</span><br>VIVA <span class="laranja-txt">MELHOR</span></h2>
+            <h2>TREINE <span class="laranja-txt">FORTE</span>, VIVA <span class="laranja-txt">MELHOR</span></h2>
         </div>
     </section>
 
@@ -194,7 +175,7 @@
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982572400" target="_blank" class="btn-matricula">MATRICULE-SE</a>
-                    <a href="https://maps.app.goo.gl/MT1h_L7FzJQRH7SA6" target="_blank" class="btn-mapa">COMO CHEGAR</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Vila+Guara" target="_blank" class="btn-mapa">COMO CHEGAR</a>
                 </div>
             </div>
         </section>
@@ -211,7 +192,7 @@
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982572400" target="_blank" class="btn-matricula">MATRICULE-SE</a>
-                    <a href="https://maps.app.goo.gl/JwnlqNHFzJQR860YB" target="_blank" class="btn-mapa">COMO CHEGAR</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Pedregulho" target="_blank" class="btn-mapa">COMO CHEGAR</a>
                 </div>
             </div>
         </section>
@@ -228,7 +209,7 @@
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512981285014" target="_blank" class="btn-matricula">MATRICULE-SE</a>
-                    <a href="https://maps.app.goo.gl/yKbpkrJzJQRlEGVW" target="_blank" class="btn-mapa">COMO CHEGAR</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Lorena" target="_blank" class="btn-mapa">COMO CHEGAR</a>
                 </div>
             </div>
         </section>
@@ -245,14 +226,14 @@
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982572400" target="_blank" class="btn-matricula">MATRICULE-SE</a>
-                    <a href="https://maps.app.goo.gl/a2faKADLzJQRePDY" target="_blank" class="btn-mapa">COMO CHEGAR</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Cachoeira+Paulista" target="_blank" class="btn-mapa">COMO CHEGAR</a>
                 </div>
             </div>
         </section>
 
         <section class="unidade">
             <div class="unidade-foto-container">
-                <img src="https://images.unsplash.com/photo-1574673130244-c747e9d80f0c?w=800" alt="Cruzeiro">
+                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800" alt="Cruzeiro">
             </div>
             <div class="unidade-content">
                 <h2>Cruzeiro - Centro</h2>
@@ -262,7 +243,7 @@
                 </div>
                 <div class="area-botoes">
                     <a href="https://wa.me/5512982452400" target="_blank" class="btn-matricula">MATRICULE-SE</a>
-                    <a href="https://maps.app.goo.gl/a2LYk_D3nQAR5LTP" target="_blank" class="btn-mapa">COMO CHEGAR</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Guarafit+Cruzeiro" target="_blank" class="btn-mapa">COMO CHEGAR</a>
                 </div>
             </div>
         </section>
@@ -270,7 +251,7 @@
     </main>
 
     <footer>
-        <p>© 2024 Guarafit Academias<br>Guaratinguetá • Lorena • Cruzeiro • Cachoeira Paulista</p>
+        <p>© 2024 Guarafit Academias • Unidades em toda a região</p>
     </footer>
 
 </body>
