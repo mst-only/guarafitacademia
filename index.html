@@ -20,7 +20,7 @@
 
         body { background-color: var(--preto); color: #ffffff; font-family: 'Poppins', sans-serif; margin: 0; overflow-x: hidden; }
         
-        /* HEADER - LOGO AMPLIADO */
+        /* HEADER - LOGO PNG AJUSTADO */
         header { padding: 45px 0 20px 0; text-align: center; display: flex; justify-content: center; align-items: center; }
         .logo-box { display: block; width: 320px; max-width: 85%; }
         .logo-box img { width: 100%; height: auto; display: block; image-rendering: -webkit-optimize-contrast; }
@@ -36,7 +36,7 @@
         .nav-link i { font-size: 1.2rem; }
         .nav-link.active { color: var(--laranja) !important; }
 
-        /* CARDS DAS UNIDADES */
+        /* CARROSSEL E CARDS */
         .container { padding: 20px; max-width: 650px; margin: 0 auto; }
         .unidade { background-color: var(--cinza-card); margin-bottom: 50px; border-radius: 20px; overflow: hidden; border: 1px solid #222; scroll-margin-top: 100px; }
         .carousel-wrapper { position: relative; width: 100%; height: 280px; overflow: hidden; }
@@ -45,6 +45,10 @@
         .carousel-slide { min-width: 100%; height: 100%; scroll-snap-align: start; }
         .carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
         
+        .carousel-dots { position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; }
+        .dot { width: 8px; height: 8px; background: rgba(255,255,255,0.3); border-radius: 50%; }
+        .dot.active { background: var(--laranja); width: 20px; border-radius: 10px; }
+
         .unidade-content { padding: 25px; }
         .unidade h2 { font-family: 'Oswald', sans-serif; color: var(--laranja); font-size: 1.6rem; margin: 0 0 10px 0; }
         .unidade-info p { font-size: 0.9rem; color: #ccc; margin: 8px 0; display: flex; gap: 10px; }
@@ -55,33 +59,16 @@
         .btn-matricula { background-color: var(--laranja) !important; }
         .btn-mapa { background-color: var(--cinza-botao) !important; border: 1px solid #333; }
 
-        /* RODAPÉ SUTIL COM MENU OCULTO */
-        .footer-social { text-align: center; padding: 40px 20px; background-color: #080808; border-top: 1px solid #111; }
-        .footer-social p { font-size: 0.8rem; color: #666; margin-bottom: 15px; }
-        
+        /* RODAPÉ SUTIL */
+        .footer-social { text-align: center; padding: 40px 20px; background-color: #080808; }
+        .footer-social p { font-size: 0.8rem; color: #666; margin-bottom: 12px; }
         .insta-dropdown { position: relative; display: inline-block; }
-        .insta-main-btn { 
-            background: transparent; border: 1px solid #333; padding: 10px 20px; 
-            border-radius: 5px; cursor: pointer; display: flex; align-items: center; gap: 8px;
-            font-size: 0.8rem; color: #aaa;
-        }
-        .insta-main-btn i { color: #E1306C; }
-
-        .dropdown-content {
-            display: none; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
-            background-color: #1a1a1a; min-width: 200px; border-radius: 8px; overflow: hidden;
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.5); margin-bottom: 5px; z-index: 10;
-        }
-        .dropdown-content a { padding: 12px; display: block; border-bottom: 1px solid #252525; font-size: 0.8rem; text-align: left; }
-        .dropdown-content a:hover { background: #222; color: var(--laranja) !important; }
+        .insta-main-btn { background: transparent; border: 1px solid #333; padding: 10px 20px; border-radius: 5px; cursor: pointer; color: #aaa; font-size: 0.8rem; display: flex; align-items: center; gap: 8px; }
+        .dropdown-content { display: none; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: #1a1a1a; min-width: 200px; border-radius: 8px; margin-bottom: 5px; box-shadow: 0 -5px 15px rgba(0,0,0,0.5); }
+        .dropdown-content a { padding: 12px; display: block; border-bottom: 1px solid #222; font-size: 0.8rem; text-align: left; }
         .insta-dropdown:hover .dropdown-content { display: block; }
 
         footer { padding: 20px; text-align: center; color: #333; font-size: 0.7rem; }
-
-        @media (max-width: 480px) {
-            .nav-link { font-size: 0.55rem; }
-            .area-botoes { flex-direction: column; }
-        }
     </style>
 </head>
 <body>
@@ -104,6 +91,11 @@
 
     <main class="container">
         <section id="guara-centro" class="unidade">
+            <div class="carousel-wrapper">
+                <div class="carousel-container">
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800"></div>
+                </div>
+            </div>
             <div class="unidade-content">
                 <h2>Guaratinguetá - Centro</h2>
                 <div class="unidade-info">
@@ -116,6 +108,11 @@
         </section>
 
         <section id="guara-pedregulho" class="unidade">
+            <div class="carousel-wrapper">
+                <div class="carousel-container">
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800"></div>
+                </div>
+            </div>
             <div class="unidade-content">
                 <h2>Guaratinguetá - Pedregulho</h2>
                 <div class="unidade-info">
@@ -128,6 +125,11 @@
         </section>
 
         <section id="lorena" class="unidade">
+            <div class="carousel-wrapper">
+                <div class="carousel-container">
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800"></div>
+                </div>
+            </div>
             <div class="unidade-content">
                 <h2>Lorena - Centro</h2>
                 <div class="unidade-info">
@@ -140,6 +142,11 @@
         </section>
 
         <section id="cachoeira" class="unidade">
+            <div class="carousel-wrapper">
+                <div class="carousel-container">
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=800"></div>
+                </div>
+            </div>
             <div class="unidade-content">
                 <h2>Cachoeira Paulista</h2>
                 <div class="unidade-info">
@@ -152,6 +159,11 @@
         </section>
 
         <section id="cruzeiro" class="unidade">
+            <div class="carousel-wrapper">
+                <div class="carousel-container">
+                    <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800"></div>
+                </div>
+            </div>
             <div class="unidade-content">
                 <h2>Cruzeiro</h2>
                 <div class="unidade-info">
@@ -167,9 +179,7 @@
     <div class="footer-social">
         <p>Siga-nos nas redes sociais</p>
         <div class="insta-dropdown">
-            <div class="insta-main-btn">
-                <i class="fab fa-instagram"></i> NOSSOS INSTAGRAMS
-            </div>
+            <div class="insta-main-btn"><i class="fab fa-instagram"></i> SELECIONE A UNIDADE</div>
             <div class="dropdown-content">
                 <a href="#">@guarafit_guaratingueta</a>
                 <a href="#">@guarafit_pedregulho</a>
@@ -183,6 +193,7 @@
     <footer><p>© 2026 Guarafit Academias</p></footer>
 
     <script>
+        // ScrollSpy logic
         const sections = document.querySelectorAll(".unidade");
         const navLinks = document.querySelectorAll(".nav-link");
         window.addEventListener("scroll", () => {
