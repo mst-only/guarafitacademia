@@ -1,0 +1,64 @@
+/* Cores da Academia */
+:root {
+    --laranja: #FF6600;
+    --preto: #000000;
+    --cinza: #1a1a1a;
+    --branco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--preto);
+    color: var(--branco);
+    font-family: Arial, sans-serif; /* Simples para começar */
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--cinza);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid var(--laranja);
+}
+
+.logo h1 {
+    color: var(--laranja);
+    letter-spacing: 2px;
+}
+
+.container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto; /* Centraliza o conteúdo na tela */
+}
+
+.unidade {
+    background-color: var(--cinza);
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid var(--laranja);
+}
+
+.unidade h2 {
+    color: var(--laranja);
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.unidade p {
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 0.8rem;
+}
