@@ -1,71 +1,68 @@
 :root {
     --laranja: #FF6600;
     --preto: #000000;
-    --cinza: #1a1a1a;
+    --cinza-card: #121212;
     --branco: #ffffff;
-    --laranja-hover: #e65c00;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none; /* Remove sublinhado de todos os links */
 }
 
 body {
     background-color: var(--preto);
     color: var(--branco);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
 }
 
 header {
-    background-color: var(--cinza);
-    padding: 25px;
+    background-color: var(--preto);
+    padding: 30px 10px;
     text-align: center;
-    border-bottom: 4px solid var(--laranja);
+    border-bottom: 2px solid var(--laranja);
 }
 
 .logo h1 {
     font-family: 'Oswald', sans-serif;
-    letter-spacing: 3px;
-    font-size: 2rem;
-}
-
-.destaque {
     color: var(--laranja);
+    font-size: 2.5rem;
+    letter-spacing: 2px;
 }
 
 .container {
-    padding: 30px 20px;
-    max-width: 500px; /* Reduzi um pouco para os cards ficarem mais elegantes */
+    padding: 20px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
 .unidade {
-    background-color: var(--cinza);
-    margin-bottom: 25px;
+    background-color: var(--cinza-card);
+    margin-bottom: 30px;
     padding: 25px;
     border-radius: 12px;
-    border-top: 1px solid #333; /* Detalhe sutil superior */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-left: 6px solid var(--laranja);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .unidade h2 {
     font-family: 'Oswald', sans-serif;
-    color: var(--branco);
+    color: var(--laranja);
     margin-bottom: 15px;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     text-transform: uppercase;
 }
 
-.unidade p {
+.info p {
     margin-bottom: 8px;
-    font-size: 0.95rem;
-    color: #ccc;
+    font-size: 0.9rem;
+    color: #e0e0e0;
 }
 
-/* Estilo do Botão Chamativo */
+/* Estilização do Botão MATRICULE-SE */
 .area-botoes {
     margin-top: 20px;
 }
@@ -74,25 +71,30 @@ header {
     display: inline-block;
     background-color: var(--laranja);
     color: var(--branco);
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: 0.3s ease;
     text-align: center;
 }
 
 .btn-whatsapp:hover {
-    background-color: var(--laranja-hover);
-    transform: translateY(-2px); /* Pequeno efeito de subir ao passar o rato */
-    box-shadow: 0 5px 15px rgba(255, 102, 0, 0.4);
+    background-color: #e65c00;
+    transform: scale(1.05);
 }
 
 footer {
     text-align: center;
-    padding: 30px;
-    color: #555;
+    padding: 40px 20px;
+    color: #444;
     font-size: 0.8rem;
+    border-top: 1px solid #111;
+}
+
+/* Ajuste para telas muito pequenas */
+@media (max-width: 400px) {
+    .logo h1 { font-size: 2rem; }
+    .unidade h2 { font-size: 1.4rem; }
 }
